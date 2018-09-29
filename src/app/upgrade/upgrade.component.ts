@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'upgrade-cmp',
-    moduleId: module.id,
-    templateUrl: 'upgrade.component.html'
+  selector: 'app-upgrade',
+  templateUrl: './upgrade.component.html',
+  styleUrls: ['./upgrade.component.css']
 })
+export class UpgradeComponent implements OnInit {
 
-export class UpgradeComponent implements OnInit{
-    ngOnInit(){
-    }
+  constructor() { }
+
+  ngOnInit() {
+  }
+
 }
