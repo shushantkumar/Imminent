@@ -24,6 +24,7 @@ import {
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { ParallaxComponent } from './parallax/parallax.component';
 import { BookingComponent } from './booking/booking.component';
+import { ChatbotComponent } from './chatbot/chatbot.component';
 
 @NgModule({
   imports: [
@@ -41,6 +42,7 @@ import { BookingComponent } from './booking/booking.component';
     AppComponent,
     AdminLayoutComponent,
     ParallaxComponent,
+    // ChatbotComponent,
     // BookingComponent,
 
   ],

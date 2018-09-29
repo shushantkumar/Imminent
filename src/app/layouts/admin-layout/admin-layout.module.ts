@@ -12,6 +12,8 @@ import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { BookingComponent } from '../../booking/booking.component';
+import { ChatbotComponent } from '../../chatbot/chatbot.component';
+
 
 import {
   MatButtonModule,
@@ -39,7 +41,8 @@ import {
     MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
-    BookingComponent
+    BookingComponent,
+    ChatbotComponent
   ]
 })
 
