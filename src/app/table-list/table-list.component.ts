@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 import * as Chartist from 'chartist';
+import { HistoryService } from './history.service';
+// import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+import {Observable} from 'rxjs/Rx';
+import {Http,Response,RequestOptions,Headers} from '@angular/http';
+import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-table-list',
@@ -7,6 +14,10 @@ import * as Chartist from 'chartist';
   styleUrls: ['./table-list.component.css']
 })
 export class TableListComponent implements OnInit {
+  allHistory;
+  constructor(private allrequestsService:HistoryService) { }
+
+
   startAnimationForLineChart(chart){
     let seq: any, delays: any, durations: any;
     seq = 0;
@@ -40,33 +51,49 @@ export class TableListComponent implements OnInit {
 
     seq = 0;
 };
-startAnimationForBarChart(chart){
-    let seq2: any, delays2: any, durations2: any;
+    startAnimationForBarChart(chart){
+        let seq2: any, delays2: any, durations2: any;
 
-    seq2 = 0;
-    delays2 = 80;
-    durations2 = 500;
-    chart.on('draw', function(data) {
-      if(data.type === 'bar'){
-          seq2++;
-          data.element.animate({
-            opacity: {
-              begin: seq2 * delays2,
-              dur: durations2,
-              from: 0,
-              to: 1,
-              easing: 'ease'
-            }
-          });
-      }
-    });
+        seq2 = 0;
+        delays2 = 80;
+        durations2 = 500;
+        chart.on('draw', function(data) {
+          if(data.type === 'bar'){
+              seq2++;
+              data.element.animate({
+                opacity: {
+                  begin: seq2 * delays2,
+                  dur: durations2,
+                  from: 0,
+                  to: 1,
+                  easing: 'ease'
+                }
+              });
+          }
+        });
 
-    seq2 = 0;
-};
-  constructor() { }
+        seq2 = 0;
+    };
+
+    getAllHistory(){
+      console.log("Something is going on!");
+      this.allrequestsService.getAllHistory().subscribe(
+        (res) =>{
+            // console.log(res.orders);
+            let response = res.visit;
+            console.log(response);
+            this.allHistory=response;
+          }, 
+        (err) => console.log(err),
+        () => console.log('done!')
+    );
+  
+    }
+
 
   ngOnInit() {
-
+    console.log("here");
+    this.getAllHistory();
 
     const dataDailySalesChart: any = {
       labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
@@ -74,6 +101,9 @@ startAnimationForBarChart(chart){
           [12, 17, 7, 17, 23, 18, 38]
       ]
   };
+
+
+ 
 
  const optionsDailySalesChart: any = {
       lineSmooth: Chartist.Interpolation.cardinal({
@@ -150,6 +180,9 @@ startAnimationForBarChart(chart){
 
   //start animation for the Emails Subscription Chart
   this.startAnimationForBarChart(websiteViewsChart1);
+
+
+
   }
 
 }

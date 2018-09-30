@@ -18,13 +18,16 @@ import { IconsComponent } from './icons/icons.component';
 import { MapsComponent } from './maps/maps.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { UpgradeComponent } from './upgrade/upgrade.component';
-import {
-  AgmCoreModule
-} from '@agm/core';
+import { AgmCoreModule } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { ParallaxComponent } from './parallax/parallax.component';
 import { BookingComponent } from './booking/booking.component';
 import { ChatbotComponent } from './chatbot/chatbot.component';
+
+import { HistoryService } from './table-list/history.service';
+
+import {HttpClientModule} from '@angular/common/http';
+// import { HttpModule } from '@angular/http'; 
 
 @NgModule({
   imports: [
@@ -36,7 +39,8 @@ import { ChatbotComponent } from './chatbot/chatbot.component';
     AppRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
-    })
+    }),
+    HttpClientModule
   ],
   declarations: [
     AppComponent,
@@ -46,7 +50,9 @@ import { ChatbotComponent } from './chatbot/chatbot.component';
     // BookingComponent,
 
   ],
-  providers: [],
+  providers: [
+    HistoryService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
