@@ -13,7 +13,8 @@ const routes: Routes =[
     path: '',
     redirectTo: 'parallax',
     pathMatch: 'full',
-  },{
+  },
+  {
     path: 'parallax',
     component: ParallaxComponent
   },
