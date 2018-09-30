@@ -1023,3 +1023,14 @@ h2 {
 		padding: 25px 45px;
 	}
 }
+
+
+
+/* Navbar */
+.navbar {
+	background-color: transparent;
+	background: transparent;
+	border-color: transparent;
+ }
+ 
+ .navbar li { color: #000 } 

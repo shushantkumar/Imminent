@@ -1,4 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild, Input } from '@angular/core';
+// import TypeIt from 'typeit';
 
 @Component({
   selector: 'app-parallax',
@@ -17,6 +18,7 @@ export class ParallaxComponent implements OnInit {
   }
   d;
   i;
+  some;
   changeBackGround(){
     
     setTimeout(()=>{
@@ -32,8 +34,14 @@ export class ParallaxComponent implements OnInit {
 
   ngOnInit() {
     this.changeBackGround();
+    // this.some = new TypeIt('#example2', {
+    //   strings: ["This is a great string.", "But here is a better one."],
+    //   speed: 50,
+    //   breakLines: false,
+    //   autoStart: false
+    // });
   }
-   
+
 
 
 }
