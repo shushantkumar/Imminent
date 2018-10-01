@@ -2,6 +2,9 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { ROUTES } from '../sidebar/sidebar.component';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
+import * as $ from 'jquery';
+import { parseCookieValue } from '@angular/common/src/cookie';
 
 @Component({
   selector: 'app-navbar',
@@ -15,7 +18,7 @@ export class NavbarComponent implements OnInit {
     private toggleButton: any;
     private sidebarVisible: boolean;
 
-    constructor(location: Location,  private element: ElementRef, private router: Router) {
+    constructor(location: Location,  private element: ElementRef, private router: Router,private cookieService: CookieService) {
       this.location = location;
           this.sidebarVisible = false;
     }
@@ -122,5 +125,11 @@ export class NavbarComponent implements OnInit {
           }
       }
       return 'Dashboard';
+    }
+
+    onGoToPage(){
+        this.cookieService.set( 'ENVuserID',"" );
+        this.cookieService.set('ENVtoken',"");
+        this.router.navigate(['parallax']);
     }
 }
