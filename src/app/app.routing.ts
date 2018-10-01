@@ -7,6 +7,7 @@ import { ParallaxComponent } from './parallax/parallax.component';
 // import { BookingComponent } from './booking/booking.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes =[
   {
@@ -17,6 +18,10 @@ const routes: Routes =[
   {
     path: 'parallax',
     component: ParallaxComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   // {
   //   path: 'tablelist/booking',
