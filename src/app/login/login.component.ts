@@ -10,6 +10,7 @@ import { LoginService } from './login.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
+
 export class LoginComponent implements OnInit {
   cookieENVuserID = '';
   cookieENVtoken = '';
@@ -21,6 +22,11 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    let k = "";
+    console.log(this.cookieService.get('ENVuserID'));
+    if(this.cookieService.get('ENVuserID')!=k ){
+      this.router.navigate(['dashboard']);
+    }
   }
 
   LoginEvent(event){
@@ -46,7 +52,8 @@ export class LoginComponent implements OnInit {
         this.cookieENVtoken = this.cookieService.get('ENVtoken');
 
         console.log(this.cookieENVuserID,this.cookieENVtoken);
-
+        this.router.navigate(['dashboard']);
+        
       },
       (err) =>{
             console.log("error maadi");
@@ -56,7 +63,7 @@ export class LoginComponent implements OnInit {
     }
     );
 
- 
+     
 
 
   }
