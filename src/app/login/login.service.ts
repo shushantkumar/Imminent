@@ -5,23 +5,17 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/throw';
-import { CookieService } from 'ngx-cookie-service';
-
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
 
 @Injectable()
-export class HistoryService {
-  private serverURL ='https://winter-is-comming.herokuapp.com';
+export class LoginService {
+  private serverURL ='http://winter-is-comming.herokuapp.com/users';
 
-  constructor(private http:HttpClient,private cookieService: CookieService) { }
+  constructor(private http:HttpClient) { }
 
   private extractData(res: Response) {
     return res;
   }
   private handleError (error: Response | any) {
-    // In a real world app, you might use a remote logging infrastructure
     let errMsg: string;
     if (error instanceof Response) {
       const body = error.json() || '';
@@ -33,13 +27,13 @@ export class HistoryService {
     console.error(errMsg);
     return Observable.throw(errMsg);
   }
+  LoginEvent(data){
+    let specificUrl = this.serverURL + '/login/';
+    let headers =  {headers: new  HttpHeaders({ 'Content-Type': 'application/json'})};
 
+    console.log(data);
 
-  getAllHistory(){
-    console.log("33");
-    let token = this.cookieService.get('ENVuserID');
-    let specificUrl = this.serverURL + '/visits/'+token;
-    return this.http.get(specificUrl)
+    return this.http.post(specificUrl,data, headers)
     .map(this.extractData)
     .catch(this.handleError);
   }

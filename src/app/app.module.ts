@@ -25,6 +25,8 @@ import { BookingComponent } from './booking/booking.component';
 import { ChatbotComponent } from './chatbot/chatbot.component';
 
 import { HistoryService } from './table-list/history.service';
+import { CookieService } from 'ngx-cookie-service';
+import { LoginService } from './login/login.service';
 
 import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
@@ -54,6 +56,8 @@ import { LoginComponent } from './login/login.component';
   ],
   providers: [
     HistoryService,
+    CookieService,
+    LoginService
   ],
   bootstrap: [AppComponent]
 })
