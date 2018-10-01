@@ -27,6 +27,7 @@ import { ChatbotComponent } from './chatbot/chatbot.component';
 import { HistoryService } from './table-list/history.service';
 
 import {HttpClientModule} from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
 // import { HttpModule } from '@angular/http'; 
 
 @NgModule({
@@ -46,6 +47,7 @@ import {HttpClientModule} from '@angular/common/http';
     AppComponent,
     AdminLayoutComponent,
     ParallaxComponent,
+    LoginComponent,
     // ChatbotComponent,
     // BookingComponent,
 
