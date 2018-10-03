@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 // import { AppointmentsComponent } from './receptionist/appointments/appointments.component';
 // import { RecepregisterComponent } from './receptionist/recepregister/recepregister.component';
 // import { PrevappoinComponent } from './receptionist/prevappoin/prevappoin.component'; 
+import { DoctorComponent } from './doctor/doctor.component';
 
 const routes: Routes =[
   {
@@ -26,6 +27,10 @@ const routes: Routes =[
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'doctor',
+    component: DoctorComponent
   },
   // {
   //   path:'reception/login',

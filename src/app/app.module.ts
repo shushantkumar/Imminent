@@ -30,6 +30,7 @@ import { LoginService } from './login/login.service';
 
 import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
+import { DoctorComponent } from './doctor/doctor.component';
 // import { ReceptionistComponent } from './receptionist/receptionist.component';
 // import { AppointmentsComponent } from './receptionist/appointments/appointments.component';
 // import { PrevappoinComponent } from './receptionist/prevappoin/prevappoin.component';
@@ -55,6 +56,7 @@ import { LoginComponent } from './login/login.component';
     AdminLayoutComponent,
     ParallaxComponent,
     LoginComponent,
+    DoctorComponent,
     // ReceptionistComponent,
     // AppointmentsComponent,
     // PrevappoinComponent,
