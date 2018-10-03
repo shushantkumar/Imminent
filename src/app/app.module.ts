@@ -30,11 +30,11 @@ import { LoginService } from './login/login.service';
 
 import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
-import { ReceptionistComponent } from './receptionist/receptionist.component';
-import { AppointmentsComponent } from './receptionist/appointments/appointments.component';
-import { PrevappoinComponent } from './receptionist/prevappoin/prevappoin.component';
-import { ReceploginComponent } from './receptionist/receplogin/receplogin.component';
-import { RecepregisterComponent } from './receptionist/recepregister/recepregister.component';
+// import { ReceptionistComponent } from './receptionist/receptionist.component';
+// import { AppointmentsComponent } from './receptionist/appointments/appointments.component';
+// import { PrevappoinComponent } from './receptionist/prevappoin/prevappoin.component';
+// import { ReceploginComponent } from './receptionist/receplogin/receplogin.component';
+// import { RecepregisterComponent } from './receptionist/recepregister/recepregister.component';
 // import { HttpModule } from '@angular/http'; 
 
 @NgModule({
@@ -55,11 +55,11 @@ import { RecepregisterComponent } from './receptionist/recepregister/recepregist
     AdminLayoutComponent,
     ParallaxComponent,
     LoginComponent,
-    ReceptionistComponent,
-    AppointmentsComponent,
-    PrevappoinComponent,
-    ReceploginComponent,
-    RecepregisterComponent,
+    // ReceptionistComponent,
+    // AppointmentsComponent,
+    // PrevappoinComponent,
+    // ReceploginComponent,
+    // RecepregisterComponent,
     // ChatbotComponent,
     // BookingComponent,
 

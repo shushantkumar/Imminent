@@ -8,10 +8,10 @@ import { ParallaxComponent } from './parallax/parallax.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
-import { ReceploginComponent } from './receptionist/receplogin/receplogin.component';
-import { AppointmentsComponent } from './receptionist/appointments/appointments.component';
-import { RecepregisterComponent } from './receptionist/recepregister/recepregister.component';
-import { PrevappoinComponent } from './receptionist/prevappoin/prevappoin.component'; 
+// import { ReceploginComponent } from './receptionist/receplogin/receplogin.component';
+// import { AppointmentsComponent } from './receptionist/appointments/appointments.component';
+// import { RecepregisterComponent } from './receptionist/recepregister/recepregister.component';
+// import { PrevappoinComponent } from './receptionist/prevappoin/prevappoin.component'; 
 
 const routes: Routes =[
   {
@@ -27,22 +27,22 @@ const routes: Routes =[
     path: 'login',
     component: LoginComponent
   },
-  {
-    path:'reception/login',
-    component: ReceploginComponent
-  },
-  {
-    path:'reception/appointments',
-    component: AppointmentsComponent
-  },
-  {
-    path:'reception/register',
-    component: RecepregisterComponent
-  },
-  {
-    path:'reception/history',
-    component: PrevappoinComponent
-  },
+  // {
+  //   path:'reception/login',
+  //   component: ReceploginComponent
+  // },
+  // {
+  //   path:'reception/appointments',
+  //   component: AppointmentsComponent
+  // },
+  // {
+  //   path:'reception/register',
+  //   component: RecepregisterComponent
+  // },
+  // {
+  //   path:'reception/history',
+  //   component: PrevappoinComponent
+  // },
   // {
   //   path: 'tablelist/booking',
   //   component: BookingComponent    
