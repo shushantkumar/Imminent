@@ -1,0 +1,149 @@
+
+
+<div class="main-content">
+    <mat-toolbar color="grey">
+            
+            <span class="flex-spacer"></span>
+            <button mat-button mat-dialog-close>&times;</button>
+    </mat-toolbar>
+    <div class="container-fluid">
+        <!-- <div class="row justify-content-between">
+            <div class="col-md-4">
+                <div class="card card-profile">
+                    <div class="card-avatar">
+                        <a href="#pablo">
+                            <img class="img" src="https://shushantkumar.github.io/images/sk2.jpg" />
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-category text-gray">BTech 3rd year</h6>
+                        <h4 class="card-title">Shushant Kumar</h4>
+                        <p class="card-description">
+                            16CO143
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Medical Diagnosis</h4>
+                        <p class="card-category">Report</p>
+                    </div>
+                    <div class="card-body">
+                        <form (ngSubmit)="onSubmit()">
+                            <div class="row">
+                                
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                      <input matInput placeholder="Patient Name">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                      <input matInput placeholder="Token Number" type="email">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-12">
+                                        <!-- <mat-form-field class="full-width">
+                                                <textarea matInput formControlName="message" placeholder="Your Feedback" rows=12></textarea>
+                                              </mat-form-field> -->
+                                    <mat-form-field class="full-width">
+                                        <textarea matInput class="example-full-width" placeholder="Diagnostic Report" rows=6></textarea>
+                                    </mat-form-field>
+                                  
+                                  
+                                </div>
+                            </div>
+                            <div class="row">
+                                    <div class="col-md-3">
+                                      <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="BP" type="text">
+                                      </mat-form-field>
+                                    </div>
+                                    <div class="col-md-3">
+                                            <mat-form-field class="example-full-width">
+                                              <input matInput placeholder="Pulse Rate" type="text">
+                                            </mat-form-field>
+                                    </div>
+                                    <div class="col-md-3">
+                                            <mat-form-field class="example-full-width">
+                                              <input matInput placeholder="Weight" type="text">
+                                            </mat-form-field>
+                                    </div>
+                                    <div class="col-md-3">
+                                            <mat-form-field class="example-full-width">
+                                              <input matInput placeholder="BMI" type="text">
+                                            </mat-form-field>
+                                    </div>
+                                          
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <mat-form-field class="full-width">
+                                        <textarea matInput class="example-full-width" placeholder="Prescription Report" rows=6></textarea>
+                                    </mat-form-field>
+                                </div>
+                                
+                            </div>
+
+                            <!-- here we insert table -->
+                            <table class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Medicine</th>
+                                            <th>Dosage</th>
+                                            <th>Duration</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let field of fieldArray; let i = index">
+                                            <td>
+                                                <input [(ngModel)]="field.code" class="form-control" type="text" name="{{field.code}}" />
+                                            </td>
+                                            <td>
+                                                <input [(ngModel)]="field.name" class="form-control" type="text" name="{{field.name}}" />
+                                            </td>
+                                            <td>
+                                                <input [(ngModel)]="field.price" class="form-control" type="text" name="{{field.price}}" />
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-default"  type="button" (click)="deleteFieldValue(i)">Delete</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input class="form-control" type="text" id="newAttributeCode" [(ngModel)]="newAttribute.code" name="newAttributeCode" />
+                                            </td>
+                                            <td>
+                                                <input class="form-control" type="text" id="newAttributeName" [(ngModel)]="newAttribute.name" name="newAttributeName" />
+                                            </td>
+                                            <td>
+                                                <input class="form-control" type="text" id="newAttributePrice" [(ngModel)]="newAttribute.price" name="newAttributePrice" />
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-default" type="button" (click)="addFieldValue()">Add</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                            </table>
+                            <!-- end of dynamic Table Insertion -->
+                           
+                            <button mat-raised-button type="submit" class="btn btn-danger pull-right">Complete Checkup</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+  </div>
+  

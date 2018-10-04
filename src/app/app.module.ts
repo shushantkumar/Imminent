@@ -1,6 +1,6 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
@@ -41,6 +41,17 @@ import { DocpastComponent } from './doctor/docpast/docpast.component';
 // import { ReceploginComponent } from './receptionist/receplogin/receplogin.component';
 // import { RecepregisterComponent } from './receptionist/recepregister/recepregister.component';
 // import { HttpModule } from '@angular/http'; 
+import { MatDialogModule } from '@angular/material/dialog';
+import { ReportComponent } from './report/report.component';
+import { MatToolbarModule } from '@angular/material/toolbar'; 
+
+//added import
+import {
+  MatButtonModule,
+  MatInputModule,
+  MatRippleModule,
+  MatTooltipModule,
+} from '@angular/material';
 
 @NgModule({
   imports: [
@@ -50,6 +61,12 @@ import { DocpastComponent } from './doctor/docpast/docpast.component';
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatRippleModule,
+    MatInputModule,
+    MatTooltipModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     }),
@@ -65,6 +82,8 @@ import { DocpastComponent } from './doctor/docpast/docpast.component';
     DocregComponent,
     DoctodayComponent,
     DocpastComponent,
+    ReportComponent,
+   
     // ReceptionistComponent,
     // AppointmentsComponent,
     // PrevappoinComponent,
@@ -73,6 +92,9 @@ import { DocpastComponent } from './doctor/docpast/docpast.component';
     // ChatbotComponent,
     // BookingComponent,
 
+  ],
+  entryComponents:[
+    ReportComponent
   ],
   providers: [
     HistoryService,
