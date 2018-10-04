@@ -13,6 +13,10 @@ import { LoginComponent } from './login/login.component';
 // import { RecepregisterComponent } from './receptionist/recepregister/recepregister.component';
 // import { PrevappoinComponent } from './receptionist/prevappoin/prevappoin.component'; 
 import { DoctorComponent } from './doctor/doctor.component';
+import { DocloginComponent } from './doctor/doclogin/doclogin.component';
+import { DocregComponent } from './doctor/docreg/docreg.component';
+import { DoctodayComponent } from './doctor/doctoday/doctoday.component';
+import { DocpastComponent } from './doctor/docpast/docpast.component';
 
 const routes: Routes =[
   {
@@ -32,6 +36,24 @@ const routes: Routes =[
     path: 'doctor',
     component: DoctorComponent
   },
+  {
+    path: 'doctor/',
+    component:DocloginComponent
+  },
+  {
+    path: 'doctor/',
+    component:DocregComponent
+  },
+  {
+    path: 'doctor/',
+    component:DoctodayComponent
+  },
+  {
+    path: 'doctor/',
+    component:DocpastComponent
+  },
+
+
   // {
   //   path:'reception/login',
   //   component: ReceploginComponent

@@ -52,6 +52,9 @@ import {
   MatRippleModule,
   MatTooltipModule,
 } from '@angular/material';
+import { ReceptionistComponent } from './receptionist/receptionist.component';
+import { RecepttodayComponent } from './receptionist/recepttoday/recepttoday.component';
+import { ReceptpastComponent } from './receptionist/receptpast/receptpast.component';
 
 @NgModule({
   imports: [
@@ -83,6 +86,9 @@ import {
     DoctodayComponent,
     DocpastComponent,
     ReportComponent,
+    ReceptionistComponent,
+    RecepttodayComponent,
+    ReceptpastComponent,
    
     // ReceptionistComponent,
     // AppointmentsComponent,
