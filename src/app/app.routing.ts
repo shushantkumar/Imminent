@@ -37,19 +37,19 @@ const routes: Routes =[
     component: DoctorComponent
   },
   {
-    path: 'doctor/',
+    path: 'doctor/login',
     component:DocloginComponent
   },
   {
-    path: 'doctor/',
+    path: 'doctor/reg',
     component:DocregComponent
   },
   {
-    path: 'doctor/',
+    path: 'doctor/current',
     component:DoctodayComponent
   },
   {
-    path: 'doctor/',
+    path: 'doctor/past',
     component:DocpastComponent
   },
 
