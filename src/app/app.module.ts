@@ -31,6 +31,10 @@ import { LoginService } from './login/login.service';
 import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { DoctorComponent } from './doctor/doctor.component';
+import { DocloginComponent } from './doctor/doclogin/doclogin.component';
+import { DocregComponent } from './doctor/docreg/docreg.component';
+import { DoctodayComponent } from './doctor/doctoday/doctoday.component';
+import { DocpastComponent } from './doctor/docpast/docpast.component';
 // import { ReceptionistComponent } from './receptionist/receptionist.component';
 // import { AppointmentsComponent } from './receptionist/appointments/appointments.component';
 // import { PrevappoinComponent } from './receptionist/prevappoin/prevappoin.component';
@@ -57,6 +61,10 @@ import { DoctorComponent } from './doctor/doctor.component';
     ParallaxComponent,
     LoginComponent,
     DoctorComponent,
+    DocloginComponent,
+    DocregComponent,
+    DoctodayComponent,
+    DocpastComponent,
     // ReceptionistComponent,
     // AppointmentsComponent,
     // PrevappoinComponent,
