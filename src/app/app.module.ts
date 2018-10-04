@@ -44,6 +44,9 @@ import { DocpastComponent } from './doctor/docpast/docpast.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ReportComponent } from './report/report.component';
 import { MatToolbarModule } from '@angular/material/toolbar'; 
+import { ReceptionistComponent } from './receptionist/receptionist.component';
+import { RecepttodayComponent } from './receptionist/recepttoday/recepttoday.component';
+import { ReceptpastComponent } from './receptionist/receptpast/receptpast.component';
 
 //added import
 import {
@@ -52,9 +55,7 @@ import {
   MatRippleModule,
   MatTooltipModule,
 } from '@angular/material';
-import { ReceptionistComponent } from './receptionist/receptionist.component';
-import { RecepttodayComponent } from './receptionist/recepttoday/recepttoday.component';
-import { ReceptpastComponent } from './receptionist/receptpast/receptpast.component';
+
 
 @NgModule({
   imports: [

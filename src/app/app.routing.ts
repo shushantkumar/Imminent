@@ -17,6 +17,9 @@ import { DocloginComponent } from './doctor/doclogin/doclogin.component';
 import { DocregComponent } from './doctor/docreg/docreg.component';
 import { DoctodayComponent } from './doctor/doctoday/doctoday.component';
 import { DocpastComponent } from './doctor/docpast/docpast.component';
+import { ReceptionistComponent } from './receptionist/receptionist.component';
+import { RecepttodayComponent } from './receptionist/recepttoday/recepttoday.component';
+import { ReceptpastComponent } from './receptionist/receptpast/receptpast.component';
 
 const routes: Routes =[
   {
@@ -52,7 +55,18 @@ const routes: Routes =[
     path: 'doctor/past',
     component:DocpastComponent
   },
-
+  {
+    path: 'reception',
+    component: ReceptionistComponent
+  },
+  {
+    path: 'reception/current',
+    component: RecepttodayComponent
+  },
+  {
+    path: 'reception/past',
+    component: ReceptpastComponent
+  },
 
   // {
   //   path:'reception/login',
