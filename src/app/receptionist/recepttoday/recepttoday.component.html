@@ -1,3 +1,101 @@
-<p>
-  recepttoday works!
-</p>
+<nav class="navbar" style="height: 10vh;">
+    <span>
+      <img src="../../assets/images/parallax.JPG" width="60px" height="60px" style="border-radius:10px;" alt=""/>
+      <b style="font-size: 35px;padding-left:15px;vertical-align: middle" >Parallax</b>
+    </span>
+    <a class="navbar-brand" style="float:left;margin-bottom: 0px">
+      <span style="border-bottom: 7px solid #DE6262;padding: 20px 20px 14px 5px;background-color: #DCDCDC" >
+        <b style="font-size: 20px;padding-left:15px;vertical-align: middle" ><a href="doctor/current" style="color:black">Today's Appointment</a></b>
+      </span>
+      <span>
+        <b style="font-size: 20px;padding-left:15px;vertical-align: middle" ><a href="doctor/past" style="color:black">Past Appointments</a></b>
+      </span>
+      <span style="margin-right:20px">
+          <b style="font-size: 30px;padding-left:15px;vertical-align: middle" ><a href="parallax" (click)="logout()"><i class="fas fa-power-off"></i></a></b>
+      </span>
+    </a>                                   
+  </nav>
+  
+  
+  <div class="login-block" style="margin-top:-20px">
+    <div class="container">
+      <div class="container-fluid">
+        <div class="limiter">
+          <div class="container-table100">
+            <div class="wrap-table100">
+              <p>Today's Appointments</p>
+              <div class="table100 ver1 m-b-110">
+                <div class="table100-head">
+                  <table>
+                    <thead>
+                      <tr class="row100 head">
+                        <th class="cell100 column1">Date</th>
+                        <th class="cell100 column2">Name</th>
+                        <th class="cell100 column3">Token Number</th>
+                        <th class="cell100 column4">Approximate Time Of Visit</th>
+                        <!-- <th class="cell100 column5">Spots</th> -->
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+  
+                <div class="table100-body js-pscroll">
+                  <table>
+                    <tbody>
+                      <tr class="row100 body">
+                        <td class="cell100 column1">12/3/2019</td>
+                        <td class="cell100 column2">Shushant Kumar</td>
+                        <td class="cell100 column3">12</td>
+                        <td class="cell100 column4">
+                            <form action="#">
+                              <div class="form-group">
+                                  <label for="time" class="sr-only">First Name</label>
+                                  <input type="email" class="form-control" id="time" value="12:00 AM">
+                              </div>
+                              <span>
+                                <br>
+                                <button style="height: 35px;width: 130px;margin: 0px 0px 0px 10px" type="submit" class="btn btn-danger">Change Time</button>
+                                <button style="height: 35px;width: 130px" type="submit" class="btn btn-success" (click)="openReportForm()">Report</button>
+  
+                              </span>
+                              
+                            </form>
+                        </td>
+                        <!-- <td class="cell100 column5">10</td> -->
+                      </tr>
+  
+                      <tr class="row100 body">
+                        <td class="cell100 column1">13/4/2018</td>
+                        <td class="cell100 column2">Edwin Thomas</td>
+                        <td class="cell100 column3">14</td>
+                        <td class="cell100 column4">
+                            <form action="#">
+                                <div class="form-group">
+                                    <label for="time" class="sr-only">First Name</label>
+                                    <input type="email" class="form-control" id="time" value="10:00 AM">
+                                </div>
+                                <span>
+                                  <br>
+                                  <button style="height: 35px;width: 130px;margin: 0px 0px 0px 10px" type="submit" class="btn btn-danger">Change Time</button>
+                                  <button style="height: 35px;width: 130px" type="submit" class="btn btn-success" (click)="openReportForm()">Report</button>
+                                </span>
+                                
+                              </form>
+                        </td>
+                        <!-- <td class="cell100 column5">15</td> -->
+                      </tr>
+  
+                      
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              
+            
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
