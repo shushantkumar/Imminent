@@ -27,6 +27,7 @@ import { ChatbotComponent } from './chatbot/chatbot.component';
 import { HistoryService } from './table-list/history.service';
 import { CookieService } from 'ngx-cookie-service';
 import { LoginService } from './login/login.service';
+import { DocloginService } from './doctor/doclogin/doclogin.service';
 
 import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
@@ -47,6 +48,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { ReceptionistComponent } from './receptionist/receptionist.component';
 import { RecepttodayComponent } from './receptionist/recepttoday/recepttoday.component';
 import { ReceptpastComponent } from './receptionist/receptpast/receptpast.component';
+import { RecptionistService } from './receptionist/recptionist.service';
 
 //added import
 import {
@@ -106,7 +108,9 @@ import {
   providers: [
     HistoryService,
     CookieService,
-    LoginService
+    LoginService,
+    DocloginService,
+    RecptionistService
   ],
   bootstrap: [AppComponent]
 })
