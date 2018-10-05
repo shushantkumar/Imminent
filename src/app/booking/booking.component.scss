@@ -5,3 +5,54 @@
 .card:hover {
     box-shadow:0 30px 70px rgba(0,0,0,.2);
 }
+
+
+.row-header{
+    margin: 0px auto;
+    padding: 0px;
+}
+
+.row-content{
+    margin: 0px auto;
+    padding: 50px 0px 50px 0px;
+    border-bottom: 1px ridge;
+    min-height:400px;
+}
+
+
+address{
+    font-size:80%;
+    margin:0px;
+    color:#0f0f0f;
+}
+
+
+/*The body is modified so that the top 50px doesn't get
+  hidden by the navbar*/
+.navbar-dark {
+     background-color: #512DA8;
+}
+
+.tab-content
+{
+    border-left: 1px solid #0f0f0f;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 10px;
+}
+
+
+.carousel{
+    background:#512DA8;
+}
+
+.carousel-item{
+    height: 350px;
+}
+
+.carousel-item img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 350px;
+}

@@ -7,10 +7,21 @@
                                     <h4 class="card-title "><i class="fas fa-user-md"></i><b style="padding-left:10px">Book an appointment</b></h4>
                                     <p class="card-category"> Doctors of NITK </p> 
                             </div>
-                            <div class="card-body">
+                            <div class="card-body"> 
                                 <div class="container">
-                                        <div class="row">
-                                                <div class="col-6 col-sm-6">
+                                    <div class="row">
+                                        <div class="col-6 col-sm-6" *ngFor="let doctors of varAllDoctors.doctors">
+                                                <div class="card">
+                                                    <img class="card-img-top" src="http://www.chapelhillfamilydoctors.com.au/images/doctor-img2.png" alt="Card image cap" style="height: 40vh;width: 50%;display: block;margin-left: auto;margin-right: auto;padding:5px">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title"><b>{{doctors.name}}</b></h5>
+                                                        <h6 class="card-subtitle mb-2 text-muted">{{doctors.specialization}}</h6>
+                                                        <p class="card-text">Where there is a brain there is a way.</p>
+                                                        <a href="#" class="btn btn-primary"> morning appointment</a>
+                                                        <a href="#" class="btn btn-primary"> evening appointment</a>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="col-6 col-sm-6">
                                                     <div class="card" >
                                                         <img class="card-img-top" src="http://www.chapelhillfamilydoctors.com.au/images/doctor-img2.png" alt="Card image cap" style="height: 40vh;width: 50%;display: block;margin-left: auto;margin-right: auto;padding:5px">
                                                         <div class="card-body">
@@ -34,10 +45,10 @@
                                                           <a href="#" class="btn btn-primary"> evening appointment</a>
                                                         </div>
                                                       </div>
-                                                </div>
+                                                </div> -->
                                         </div>
-                                
-                                        <div class="row">
+                                    </div>
+                                        <!-- <div class="row">
                                                 <div class="col-6 col-sm-6">
                                                     <div class="card" >
                                                         <img class="card-img-top" src="http://pngimg.com/uploads/doctor/doctor_PNG16020.png" alt="Card image cap" style="height: 40vh;width: 50%;display: block;margin-left: auto;margin-right: auto;padding:5px">
@@ -63,100 +74,73 @@
                                                         </div>
                                                       </div>
                                                 </div>
-                                        </div>
-                                </div>
+                                        </div> -->
+                                    </div>
                             </div>
                         </div>
                 </div>
                 
         </div>
-
-
-
+        <!-- add here -->
         <div class="row">
-            <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header card-header-danger">
-                                <h4 class="card-title "><i class="fas fa-user-md"></i><b style="padding-left:10px">Doctor Details at a Glance</b></h4>
-                                <p class="card-category"> Doctors of NITK </p> 
-                        </div>
-                        <div class="card-body">
-                                <div class="container">
-        
-                                        <div class="row row-content">
-                                
-                                            <!-- <div class="col-12">
-                                                <h3>Doctors of NITK</h3>
-                                            </div> 
-                                -->
-                                            <div class="col-12">
-                                                <ul class="nav nav-tabs">
-                                                    <li class="nav-item">
-                                                        <a class="nav-link active" href="#peter" role="tab" data-toggle="tab"><p style="color:black">Peter Pan ,Cardiologist</p></a>
-                                                    </li>
-                                
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="#danny" role="tab" data-toggle="tab"><p>Danny Witherspoon, Neurologist</p></a>
-                                                    </li>
-                                
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="#agumbe" role="tab" data-toggle="tab"><p>Agumbe Tang,Opthalmologist</p></a>
-                                                    </li>
-                                
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="#alberto" role="tab" data-toggle="tab"><p>Alberto Somayya, ENT Specialist</p></a>
-                                                    </li>
-                                
-                                
-                                                </ul>
-                                                <ul class="nav nav-tabs">
-                                                        <li class="nav-item">
-                                                        <a class="nav-link active" href="#">Active</a>
-                                                        </li>
-                                                        <li class="nav-item">
-                                                        <a class="nav-link" href="#">Link</a>
-                                                        </li>
-                                                        <li class="nav-item">
-                                                        <a class="nav-link" href="#">Link</a>
-                                                        </li>
-                                                        <li class="nav-item">
-                                                        <a class="nav-link disabled" href="#">Disabled</a>
-                                                        </li>
-                                                </ul>
-                                                <div class="tab-content">
-                                                    <div role="tab-panel" class="tab-pane fade show active" id="peter">
-                                                        <h3>Peter Pan  <small>Cardiologist</small></h3>
-                                                        <!--Note: The d-block is used to display the text as a block instead of inline and d-sm-block or d-*-block will
-                                                            just make the display-block responsive
-                                                            also the d-none means display none for extra small screens-->
-                                                        <p class="d-none d-sm-block">At their highest levels, professional chefs may also be called head cooks because they manage the kitchens in which they work. They oversee subordinate cooks and kitchen staff, and prepare menu items themselves. Their days may regularly last 12 hours and can include early mornings, late evenings, weekends and holidays.</p>
+                <div class="col-md-12">
+                          <div class="card">
+                                <div class="card-header card-header-danger">
+                                    <h4 class="card-title "><i class="fas fa-user-md"></i><b style="padding-left:10px">Doctors of NITK</b></h4>
+                                    <p class="card-category"> View Doctor Details </p> 
+                                </div>
+                                <div class="card-body">
+                                  <div class="table-responsive">
+                                      <div class="col-12">
+                                            <div id="accordian" *ngFor="let doctors of varAllDoctors.doctors">
+                                                <div class="card">
+                                                    <div class="card-header" role="tab" id="peterhead">
+                                                        <a class="mb-0 collapsed" data-toggle="collapse" [attr.data-target]="'#' + doctors._id">
+                                                            <span><small style="font-size:22px;padding-left:30px;"><i class="fas fa-user-md" style="padding-right:10px;color:black"></i>Dr. {{doctors.name}}</small><b style="float:right;font-size:20px"><i class="fas fa-caret-down"></i></b></span>
+                                                        </a>
+                                                    </div>
+                            
+                                                    <div class="collapse" id="{{doctors._id}}" data-parent="#accordian">
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                
+                                                                <div class="col-lg-3">
+                                                                    <h3>
+                                                                        Specialization
+                                                                    </h3>
+                                                                </div>
+                                                                    
+                                                                <div class="col-lg-6">
+                                                                     <p class="d-none d-sm-block">{{doctors.specialization}}</p>
+    
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                
+                                                                    <div class="col-lg-3">
+                                                                        <h3>
+                                                                            Details
+                                                                        </h3>
+                                                                    </div>
+                                                                        
+                                                                    <div class="col-lg-6">
+                                                                         <p class="d-none d-sm-block">Very experienced and wise in making decisions. Served the HCC for 20 years and through expertise and dedication helped to lead a health lifestyle in NITK</p>
+                                                                    </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                     
-                                                    <div role="tab-panel" class="tab-pane fade" id="danny">
-                                                            <h3>Danny Witherspoon  <small>Neurologist</small></h3>
-                                                            <p class="d-none d-sm-block">At their highest levels, professional chefs may also be called head cooks because they manage the kitchens in which they work. They oversee subordinate cooks and kitchen staff, and prepare menu items themselves. Their days may regularly last 12 hours and can include early mornings, late evenings, weekends and holidays.</p>
-                                                    </div>
-                                                    
-                                                    <div role="tab-panel" class="tab-pane fade" id="agumbe">
-                                                            <h3>Agumbe Tang  <small>Opthalmologist</small></h3>
-                                                            <p class="d-none d-sm-block">At their highest levels, professional chefs may also be called head cooks because they manage the kitchens in which they work. They oversee subordinate cooks and kitchen staff, and prepare menu items themselves. Their days may regularly last 12 hours and can include early mornings, late evenings, weekends and holidays.</p>
-                                                    </div>
-                                                    
-                                                    <div role="tab-panel" class="tab-pane fade" id="alberto">
-                                                            <h3>Alberto Somayya  <small>ENT Specialist</small></h3>
-                                                            <p class="d-none d-sm-block">At their highest levels, professional chefs may also be called head cooks because they manage the kitchens in which they work. They oversee subordinate cooks and kitchen staff, and prepare menu items themselves. Their days may regularly last 12 hours and can include early mornings, late evenings, weekends and holidays.</p>
-                                                    </div> 
-                                
                                                 </div>
+                                                
                                             </div>
-                                            
-                                        </div>
-                                
-                                    </div>     
-                        </div>
-                    </div>
+                                  </div>
+                                </div>
+                          </div>
+                </div>
             </div>
-        </div>
+
+
+        
     </div>
     
 </div>

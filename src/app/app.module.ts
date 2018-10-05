@@ -49,6 +49,8 @@ import { ReceptionistComponent } from './receptionist/receptionist.component';
 import { RecepttodayComponent } from './receptionist/recepttoday/recepttoday.component';
 import { ReceptpastComponent } from './receptionist/receptpast/receptpast.component';
 import { RecptionistService } from './receptionist/recptionist.service';
+//importing the fetch-doctors service 
+import { FetchDoctorsService } from './booking/fetch-doctors.service';
 
 //added import
 import {
@@ -110,7 +112,8 @@ import {
     CookieService,
     LoginService,
     DocloginService,
-    RecptionistService
+    RecptionistService,
+    FetchDoctorsService
   ],
   bootstrap: [AppComponent]
 })
