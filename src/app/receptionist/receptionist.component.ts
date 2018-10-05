@@ -41,7 +41,7 @@ export class ReceptionistComponent implements OnInit {
       .subscribe(
         (response) => {
         console.log(response);
-        this.cookieService.set( 'RECuserID', response.RECtorID );
+        this.cookieService.set( 'RECuserID', response.receptionID );
         this.cookieService.set('RECtoken',response.token);
 
         this.cookieRECuserID = this.cookieService.get('RECuserID');

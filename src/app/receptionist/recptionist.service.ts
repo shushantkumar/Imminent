@@ -28,7 +28,8 @@ export class RecptionistService {
     return Observable.throw(errMsg);
   }
   LoginEvent(data){
-    let specificUrl = this.serverURL;
+    
+    let specificUrl = this.serverURL + '/login/';
     let headers =  {headers: new  HttpHeaders({ 'Content-Type': 'application/json'})};
 
     console.log(data);

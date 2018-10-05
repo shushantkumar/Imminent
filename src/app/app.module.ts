@@ -49,6 +49,8 @@ import { ReceptionistComponent } from './receptionist/receptionist.component';
 import { RecepttodayComponent } from './receptionist/recepttoday/recepttoday.component';
 import { ReceptpastComponent } from './receptionist/receptpast/receptpast.component';
 import { RecptionistService } from './receptionist/recptionist.service';
+import { CurrententryService } from './appointmententry/currententry.service';
+import { PastentryService } from './appointmententry/pastentry.service';
 
 //added import
 import {
@@ -110,7 +112,9 @@ import {
     CookieService,
     LoginService,
     DocloginService,
-    RecptionistService
+    RecptionistService,
+    CurrententryService,
+    PastentryService
   ],
   bootstrap: [AppComponent]
 })

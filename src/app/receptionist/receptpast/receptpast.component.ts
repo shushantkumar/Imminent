@@ -22,4 +22,11 @@ export class ReceptpastComponent implements OnInit {
     }
   }
 
+
+  Logout(){
+    this.cookieService.set( 'RECuserID', "" );
+    this.cookieService.set('RECtoken',"");
+    this.router.navigate(['reception']);
+  }
+
 }

@@ -27,4 +27,10 @@ export class RecepttodayComponent implements OnInit {
   // openReportForm(){
   //   this.dialog.open(ReportComponent,{width: '95%',height: '95%'});
   // }
+
+  Logout(){
+    this.cookieService.set( 'RECuserID', "" );
+    this.cookieService.set('RECtoken',"");
+    this.router.navigate(['reception']);
+  }
 }
