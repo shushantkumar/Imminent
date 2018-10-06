@@ -3,10 +3,8 @@ import {Router} from '@angular/router';
 import * as Chartist from 'chartist';
 import { HistoryService } from './history.service';
 // import { HttpModule } from '@angular/http';
-import { HttpClientModule } from '@angular/common/http';
-import {Observable} from 'rxjs/Rx';
-import {Http,Response,RequestOptions,Headers} from '@angular/http';
-import { BrowserModule } from '@angular/platform-browser';
+import { CookieService } from 'ngx-cookie-service';
+import { CurrententryService } from '../appointmententry/currententry.service';
 
 @Component({
   selector: 'app-table-list',
@@ -15,7 +13,8 @@ import { BrowserModule } from '@angular/platform-browser';
 })
 export class TableListComponent implements OnInit {
   allHistory;
-  constructor(private allrequestsService:HistoryService) { }
+  allbooked;
+  constructor(private cookieService: CookieService,private allrequestsService:HistoryService,private currservice: CurrententryService) { }
 
 
   startAnimationForLineChart(chart){
@@ -90,11 +89,27 @@ export class TableListComponent implements OnInit {
   
     }
 
+    getBooked(){
+      let data = this.cookieService.get( 'ENVuserID');
+      this.currservice.StudentAppointment(data).subscribe(
+        (res) =>{
+            // console.log(res.orders);
+            let response = res.pending;
+            console.log(response);
+            this.allbooked=response;
+          }, 
+        (err) => console.log(err),
+        () => console.log('done!')
+    );
 
+    }
+
+    
   ngOnInit() {
     console.log("here");
+    this.cookieService.set( 'ENVuserID', "5b9f729f683855265cbba835" );
     this.getAllHistory();
-
+    this.getBooked();
     const dataDailySalesChart: any = {
       labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
       series: [
