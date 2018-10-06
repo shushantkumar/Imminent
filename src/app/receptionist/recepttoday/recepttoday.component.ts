@@ -38,11 +38,10 @@ export class RecepttodayComponent implements OnInit {
   }
 
   getAllHistory(){
-    // var data = this.cookieService.get('DOCuserID');
     console.log("Something is going on!");
     this.getService.ReceptionAppointment().subscribe(
       (res) =>{
-          let response = res.pending;
+          let response = res.pendings;
           this.alldata = response;
           console.log(response);
         }, 
