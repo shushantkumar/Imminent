@@ -42,15 +42,15 @@
               <div class="table100-body js-pscroll">
                 <table>
                   <tbody>
-                    <tr class="row100 body">
-                      <td class="cell100 column1">12/3/2019</td>
-                      <td class="cell100 column2">Shushant Kumar</td>
-                      <td class="cell100 column3">12</td>
+                    <tr class="row100 body" *ngFor="let meta of alldata">
+                      <td class="cell100 column1">{{meta.date | date}}</td>
+                      <td class="cell100 column2">{{meta.student.name}}</td>
+                      <td class="cell100 column3">{{meta.token}}</td>
                       <td class="cell100 column4">
                           <form action="#">
                             <div class="form-group">
                                 <label for="time" class="sr-only">First Name</label>
-                                <input type="email" class="form-control" id="time" value="12:00 AM">
+                                <input type="email" class="form-control" id="time" value="{{meta.date | date:'shortTime'}}">
                             </div>
                             <span>
                               <br>
@@ -62,27 +62,6 @@
                           </form>
                       </td>
                       <!-- <td class="cell100 column5">10</td> -->
-                    </tr>
-
-                    <tr class="row100 body">
-                      <td class="cell100 column1">13/4/2018</td>
-                      <td class="cell100 column2">Edwin Thomas</td>
-                      <td class="cell100 column3">14</td>
-                      <td class="cell100 column4">
-                          <form action="#">
-                              <div class="form-group">
-                                  <label for="time" class="sr-only">First Name</label>
-                                  <input type="email" class="form-control" id="time" value="10:00 AM">
-                              </div>
-                              <span>
-                                <br>
-                                <button style="height: 35px;width: 130px;margin: 0px 0px 0px 10px" type="submit" class="btn btn-danger">Change Time</button>
-                                <button style="height: 35px;width: 130px" type="submit" class="btn btn-success" (click)="openReportForm()">Report</button>
-                              </span>
-                              
-                            </form>
-                      </td>
-                      <!-- <td class="cell100 column5">15</td> -->
                     </tr>
 
                     

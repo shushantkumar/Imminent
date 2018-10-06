@@ -40,7 +40,8 @@ export class DocloginComponent implements OnInit {
       .subscribe(
         (response) => {
         console.log(response);
-        this.cookieService.set( 'DOCuserID', response.doctorID );
+        // this.cookieService.set( 'DOCuserID', response.doctorID );
+        this.cookieService.set( 'DOCuserID', "5bb6529814976124c479bba8" );
         this.cookieService.set('DOCtoken',response.token);
 
         this.cookieDOCuserID = this.cookieService.get('DOCuserID');

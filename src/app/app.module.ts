@@ -49,8 +49,13 @@ import { ReceptionistComponent } from './receptionist/receptionist.component';
 import { RecepttodayComponent } from './receptionist/recepttoday/recepttoday.component';
 import { ReceptpastComponent } from './receptionist/receptpast/receptpast.component';
 import { RecptionistService } from './receptionist/recptionist.service';
+<<<<<<< HEAD
 //importing the fetch-doctors service 
 import { FetchDoctorsService } from './booking/fetch-doctors.service';
+=======
+import { CurrententryService } from './appointmententry/currententry.service';
+import { PastentryService } from './appointmententry/pastentry.service';
+>>>>>>> f30808af0634c0e6fce22f9284c2021e644ca549
 
 //added import
 import {
@@ -113,7 +118,12 @@ import {
     LoginService,
     DocloginService,
     RecptionistService,
+<<<<<<< HEAD
     FetchDoctorsService
+=======
+    CurrententryService,
+    PastentryService
+>>>>>>> f30808af0634c0e6fce22f9284c2021e644ca549
   ],
   bootstrap: [AppComponent]
 })

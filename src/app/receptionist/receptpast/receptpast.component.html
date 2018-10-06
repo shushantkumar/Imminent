@@ -11,7 +11,7 @@
         <b style="font-size: 20px;padding-left:15px;vertical-align: middle" ><a href="doctor/past" style="color:black">Past Appointments</a></b>
       </span>
       <span style="margin-right:20px">
-          <b style="font-size: 30px;padding-left:15px;vertical-align: middle" ><a href="parallax" (click)="logout()"><i class="fas fa-power-off"></i></a></b>
+          <b style="font-size: 30px;padding-left:15px;vertical-align: middle" ><a href="" (click)="Logout()"><i class="fas fa-power-off"></i></a></b>
       </span>
     </a>                                   
   </nav>
@@ -40,21 +40,15 @@
             <div class="table100-body js-pscroll">
               <table>
                 <tbody>
-                  <tr class="row100 body">
-                    <td class="cell100 column1">12/3/2019</td>
-                    <td class="cell100 column2">9:00 AM - 11:00 AM</td>
-                    <td class="cell100 column3">Shushant Kumar</td>
+                  <tr class="row100 body" *ngFor="let meta of alldata">
+                    <td class="cell100 column1">{{meta.date | date}}</td>
+                    <td class="cell100 column2">{{meta.comment}}</td>
+                    <td class="cell100 column3">{{ meta.student }}</td>
                     <td class="cell100 column4"><button style="height: 35px;width: 190px"type="button" class="btn btn-success">View Report</button></td>
                     <!-- <td class="cell100 column5">10</td> -->
                   </tr>
   
-                  <tr class="row100 body">
-                    <td class="cell100 column1">13/4/2018</td>
-                    <td class="cell100 column2">8:00 AM - 9:00 AM</td>
-                    <td class="cell100 column3">Edwin Thomas</td>
-                    <td class="cell100 column4"><button style="height: 35px;width: 190px"type="button" class="btn btn-success">View Report</button></td>
-                    <!-- <td class="cell100 column5">15</td> -->
-                  </tr>
+
   
                   
                 </tbody>
