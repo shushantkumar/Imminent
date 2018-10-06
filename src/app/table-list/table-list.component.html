@@ -113,7 +113,7 @@
                                             <div class="card">
                                                 <div class="card-header" role="tab" id="peterhead">
                                                     <a class="mb-0 collapsed" data-toggle="collapse" [attr.data-target]="'#' + meta._id">
-                                                        <span><b style="font-size:18px;"><i class="far fa-calendar-alt" style="padding-right:10px"></i>{{meta.date|date:'medium'}}</b> <small style="font-size:22px;padding-left:30px;"><i class="fas fa-user-md" style="padding-right:10px;color:black"></i>Dr. {{meta.doctorName}}</small><b style="float:right;font-size:20px"><i class="fas fa-caret-down"></i></b></span>
+                                                        <span><b style="font-size:18px;"><i class="far fa-calendar-alt" style="padding-right:10px"></i>{{meta.date|date:'medium'}}</b> <small style="font-size:22px;padding-left:30px;"><i class="fas fa-user-md" style="padding-right:10px;color:black"></i>Dr. {{meta.doctor.name}}</small><b style="float:right;font-size:20px"><i class="fas fa-caret-down"></i></b></span>
                                                     </a>
                                                 </div>
                         
@@ -273,7 +273,7 @@
                                                         <th>Time of Request</th>
                                                 </tr>
                                                 <tr *ngFor="let meta of allbooked">
-                                                    <td *ngIf="meta.flag">{{meta.doctor}}</td>
+                                                    <td *ngIf="meta.flag">{{meta.doctor.name}}</td>
                                                     <td *ngIf="meta.flag">{{meta.date | date:'medium'}}</td>
                                                 </tr>
                                         </table>
@@ -299,7 +299,7 @@
                                                             <th>Time</th>
                                                     </tr>
                                                     <tr *ngFor="let meta of allbooked">
-                                                        <td *ngIf="!(meta.flag)">{{meta.doctor}}</td>
+                                                        <td *ngIf="!(meta.flag)">{{meta.doctor.name}}</td>
                                                         <td *ngIf="!(meta.flag)">{{meta.token}}</td>
                                                         <td *ngIf="!(meta.flag)">{{meta.date | date:'medium'}}</td>
                                                         
