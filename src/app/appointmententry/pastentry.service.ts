@@ -28,7 +28,6 @@ export class PastentryService {
     return Observable.throw(errMsg);
   }
 
-
   AppointmentDone(data){
     
     let specificUrl = this.serverURL;

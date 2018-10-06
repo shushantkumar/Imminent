@@ -9,7 +9,7 @@ import { PastentryService } from '../../appointmententry/pastentry.service';
   styleUrls: ['./docpast.component.scss']
 })
 export class DocpastComponent implements OnInit {
-
+  alldata;
   constructor(
     private cookieService: CookieService,
     private router: Router,
@@ -33,6 +33,7 @@ export class DocpastComponent implements OnInit {
     this.pastentryService.DoctorPast(data).subscribe(
       (res) =>{
           let response = res.visit;
+          this.alldata = response;
           console.log(response);
         }, 
       (err) => console.log(err),
