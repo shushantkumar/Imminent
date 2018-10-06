@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchDoctorsService } from '../booking/fetch-doctors.service';
+import { CurrententryService } from '../appointmententry/currententry.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-booking',
@@ -10,7 +12,10 @@ export class BookingComponent implements OnInit
 {
   varAllDoctors;
   //innitializing the service instance in the constructor
-  constructor(private fetchService:FetchDoctorsService){ 
+  constructor(
+    private fetchService:FetchDoctorsService,private currService:CurrententryService,
+    private cookieService: CookieService,
+    ){ 
   }
 
   ngOnInit() {
@@ -39,5 +44,36 @@ export class BookingComponent implements OnInit
       () => console.log('done!')
     );
   }
+
+  bookAppoint(dat){
+    let docID = dat._id;
+    let flag = "-1";
+    let sID = this.cookieService.get('ENVuserID');
+    let data = {
+      "doctorID":docID,
+      "flag":flag,
+      "studentID":sID
+    };
+    console.log("started booking");
+    // console.log(data);
+    this.currService.CreateAppointment(data)
+    .subscribe(
+      (response) => {
+      console.log(response);
+
+      // this.router.navigate(['dashboard']);
+      
+    },
+    (err) =>{
+          console.log("error maadi");
+          console.log(err);
+    },
+    () => {console.log('done!');
+
+  }
+  );
+
+  }
+
 
 }

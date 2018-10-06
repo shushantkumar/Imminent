@@ -271,7 +271,11 @@
                                                 <tr>
                                                         <th>Doctor Name</th>
                                                         <th>Time of Request</th>
-                                                    </tr>
+                                                </tr>
+                                                <tr *ngFor="let meta of allbooked">
+                                                    <td *ngIf="meta.flag">{{meta.doctor}}</td>
+                                                    <td *ngIf="meta.flag">{{meta.date | date:'medium'}}</td>
+                                                </tr>
                                         </table>
                                             
                                     </div>
@@ -293,8 +297,13 @@
                                                             <th>Doctor Name</th>
                                                             <th>Token Number</th>
                                                             <th>Time</th>
-                                                      </tr>
-                                                      
+                                                    </tr>
+                                                    <tr *ngFor="let meta of allbooked">
+                                                        <td *ngIf="!(meta.flag)">{{meta.doctor}}</td>
+                                                        <td *ngIf="!(meta.flag)">{{meta.token}}</td>
+                                                        <td *ngIf="!(meta.flag)">{{meta.date | date:'medium'}}</td>
+                                                        
+                                                    </tr>
                                             </table>
                                           
                                         </div>

@@ -93,7 +93,7 @@ export class TableListComponent implements OnInit {
       let data = this.cookieService.get( 'ENVuserID');
       this.currservice.StudentAppointment(data).subscribe(
         (res) =>{
-            // console.log(res.orders);
+            console.log(res);
             let response = res.pending;
             console.log(response);
             this.allbooked=response;
@@ -107,7 +107,7 @@ export class TableListComponent implements OnInit {
     
   ngOnInit() {
     console.log("here");
-    this.cookieService.set( 'ENVuserID', "5b9f729f683855265cbba835" );
+    // this.cookieService.set( 'ENVuserID', "5b9f729f683855265cbba835" );
     this.getAllHistory();
     this.getBooked();
     const dataDailySalesChart: any = {
