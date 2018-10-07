@@ -48,7 +48,7 @@
                       <td class="cell100 column3">{{meta.token}}</td>
                       <td class="cell100 column4">
                           <form action="#">
-                            <div class="form-group">
+                            <div class="form-group" (submit)="ChangeTime($event)">
                                 <label for="time" class="sr-only">First Name</label>
                                 <input type="email" class="form-control" id="time" value="{{meta.date | date:'shortTime'}}">
                             </div>

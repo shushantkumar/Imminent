@@ -64,5 +64,32 @@ export class DoctodayComponent implements OnInit {
 
 }
 
+ChangeTime(event){
+  console.log("Appontment booking initiated");
+
+  // put the particular entries ID
+  let appID = event._id;
+
+  // put the updated date from the form
+  let updated = event.date;
+  let data = [
+    {
+    "propName":"date",
+    "value": updated
+    }
+    
+  ];
+  console.log(appID,data);
+  this.getService.PatchAppointment(data,appID).subscribe(
+    (res) =>{
+      let response = res;
+      // this.alldata = response;
+      console.log(response);
+      
+    }, 
+  (err) => console.log(err),
+  () => console.log('done!')
+);
+  }
 
 }
