@@ -12,6 +12,8 @@ import { CurrententryService } from '../../appointmententry/currententry.service
 })
 export class RecepttodayComponent implements OnInit {
   alldata;
+  allApproveddata;
+  datetime;
   constructor(
     public dialog: MatDialog,
     private cookieService: CookieService,
@@ -26,10 +28,9 @@ export class RecepttodayComponent implements OnInit {
       this.router.navigate(['reception']);
     }
     this.getAllHistory();
+    this.getApproved();
   }
-  // openReportForm(){
-  //   this.dialog.open(ReportComponent,{width: '95%',height: '95%'});
-  // }
+
 
   Logout(){
     this.cookieService.set( 'RECuserID', "" );
@@ -50,6 +51,19 @@ export class RecepttodayComponent implements OnInit {
   );
 
 }
+
+  getApproved(){
+    console.log("Approved Table");
+    this.getService.ReceptionApproved().subscribe(
+      (res) =>{
+          let response = res.pendings;
+          this.allApproveddata = response;
+          console.log(response);
+        }, 
+      (err) => console.log(err),
+      () => console.log('done!')
+  );
+  }
 
   Approve(event){
     console.log("Appontment booking initiated");
@@ -76,5 +90,35 @@ export class RecepttodayComponent implements OnInit {
 this.getAllHistory();
 
   }
+
+  ChangeTime(event){
+    console.log("Appontment booking initiated");
+
+    // put the particular entries ID
+    let appID = event._id;
+
+    // put the updated date from the form
+    let updated = event.date;
+    let data = [
+      {
+      "propName":"date",
+      "value": updated
+      }
+      
+    ];
+    console.log(appID,data);
+    this.getService.PatchAppointment(data,appID).subscribe(
+      (res) =>{
+        let response = res;
+        // this.alldata = response;
+        console.log(response);
+        
+      }, 
+    (err) => console.log(err),
+    () => console.log('done!')
+);
+// this.router.navigate(['reception/current']);
+this.getAllHistory();
+    }
 
 }

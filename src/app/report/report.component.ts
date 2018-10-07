@@ -108,10 +108,13 @@ export class ReportComponent implements OnInit {
     
     //storing the id
     this.reportDetails.studentID=this.getBservice.getStudentInfo()[0];
+
     //storing the name
     this.varActualname = this.getBservice.getStudentInfo()[1];
+
     //storing the token number
     this.varTokenNumber = this.getBservice.getStudentInfo()[2];
+    
     // console.log(this.reportDetails.studentID);
     this.varName=this.varActualname;
     console.log(this.varName);

@@ -43,7 +43,7 @@
                 <tr class="row100 body" *ngFor="let meta of alldata">
                   <td class="cell100 column1">{{meta.date | date}}</td>
                   <td class="cell100 column2">{{meta.comment}}</td>
-                  <td class="cell100 column3">{{ meta.student }}</td>
+                  <td class="cell100 column3">{{ meta.student.name }}</td>
                   <td class="cell100 column4"><button style="height: 35px;width: 190px"type="button" class="btn btn-success">View Report</button></td>
                   <!-- <td class="cell100 column5">10</td> -->
                 </tr>

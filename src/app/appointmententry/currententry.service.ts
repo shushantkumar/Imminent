@@ -76,4 +76,13 @@ export class CurrententryService {
     .map(this.extractData)
     .catch(this.handleError);
   }
+
+    DeleteAppointment(data){
+      let specificUrl = this.serverURL+data;
+      let headers =  {headers: new  HttpHeaders({ 'Content-Type': 'application/json'})};
+      return this.http.delete(specificUrl,headers)
+      .map(this.extractData)
+      .catch(this.handleError);
+    }
+
 }

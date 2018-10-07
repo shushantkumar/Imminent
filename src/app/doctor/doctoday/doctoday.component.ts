@@ -30,7 +30,15 @@ export class DoctodayComponent implements OnInit {
     //here I should invoke service to set the value
     this.getBService.setStudentInfo([meta.student._id,meta.student.name,meta.token]);
     this.dialog.open(ReportComponent,{width: '95%',height: '95%'});
-
+    this.getService.DeleteAppointment(meta._id).subscribe(
+      (res) =>{
+          let response = res;
+          // this.alldata = response;
+          console.log(response);
+        }, 
+      (err) => console.log(err+"error maadi"),
+      () => console.log('done!')
+  );
   }
 
   Logout(){
