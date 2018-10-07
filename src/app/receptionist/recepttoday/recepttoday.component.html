@@ -47,15 +47,16 @@
                         <td class="cell100 column2">{{meta.student.name}}</td>
                         <td class="cell100 column3">{{meta.token}}</td>
                         <td class="cell100 column4">
-                            <form action="#" (submit)="ChangeTime($event)">
+                            <!-- <form action="#" (submit)="ChangeTime($event)"> -->
+                            <form action="#">
                               <div class="form-group">
                                   <label for="time" class="sr-only">First Name</label>
-                                  <input type="email" class="form-control" id="time" placeholder="21:40">
+                                  <input [(ngModel)]="some_val" type="email" class="form-control" id="time" placeholder="{{meta.approx_date | date :'shortTime'}}">
                               </div>
                               <span>
                                 <br> 
-                                <button style="height: 35px;width: 130px;margin: 0px 0px 0px 10px" type="submit" class="btn btn-danger" >Change Time</button>
-                                <button style="height: 35px;width: 130px" type="submit" class="btn btn-success" (click)="Approve(meta)">Confirm</button>
+                                <button style="height: 35px;width: 130px;margin: 0px 0px 0px 10px" class="btn btn-danger" (click)="ChangeTime(meta)">Change Time</button>
+                                <button style="height: 35px;width: 130px" class="btn btn-success" (click)="Approve(meta)">Confirm</button>
   
                               </span>
                               

@@ -14,6 +14,9 @@ export class RecepttodayComponent implements OnInit {
   alldata;
   allApproveddata;
   datetime;
+  some_val;
+  //for storing the entered time updated variable is used with a two way binding
+  updated;
   constructor(
     public dialog: MatDialog,
     private cookieService: CookieService,
@@ -85,24 +88,45 @@ export class RecepttodayComponent implements OnInit {
       }, 
     (err) => console.log(err),
     () => console.log('done!')
-);
-// this.router.navigate(['reception/current']);
-this.getAllHistory();
+  );
+  // this.router.navigate(['reception/current']);
+  this.getAllHistory();
 
   }
 
-  ChangeTime(event){
-    console.log("Appontment booking initiated");
+  //function to trucate the date the date part of date time
+  truncDate(val:string):string
+  {
+      let hour=parseInt(val[11])*10+parseInt(val[12]);
+      let minute=parseInt(val[14])*10+parseInt(val[15]);
+      let hour1=hour-5+parseInt(this.some_val[0])*10+parseInt(this.some_val[1]);
+      let minute1=minute-30+parseInt(this.some_val[3])*10+parseInt(this.some_val[4]);
+      console.log(hour1);
+      //converting to string
+      let final=hour1.toString()+":"+minute1.toString();
+      console.log(hour1+minute1);
+      return final;
+
+  }
+  
+
+  //to change time
+  ChangeTime(meta){
+    console.log("Appointment booking initiated");
 
     // put the particular entries ID
-    let appID = event._id;
+    let appID = meta._id;
+    console.log(meta.approx_date);
+
+    let time = this.truncDate(meta.approx_date.toString());
 
     // put the updated date from the form
-    let updated = event.date;
+    console.log("asdf"+meta.approx_date.substring(0,10)+"T"+time+":00.085Z");
+    
     let data = [
       {
-      "propName":"date",
-      "value": updated
+      "propName":"approx_date",
+      "value": meta.approx_date.substring(0,10)+"T"+time+":00.085Z" //  2018-10-07T22:09:50.085Z"
       }
       
     ];
@@ -117,7 +141,7 @@ this.getAllHistory();
     (err) => console.log(err),
     () => console.log('done!')
 );
-// this.router.navigate(['reception/current']);
+this.router.navigate(['reception/current']);
 this.getAllHistory();
     }
 
