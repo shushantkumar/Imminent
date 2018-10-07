@@ -245,12 +245,13 @@
     </div>    
     <div class="container-fluid">
             <div class="row">
-                    <button [routerLink]="['/booking']">Book a session with the Doctor</button>
+                <div class="col-md-6">
+                    <button [routerLink]="['/booking']" type="button" class="btn btn-danger">Book a session with the Doctor</button>
                 </div>
-        
-                <div class="row">
-                    <button [routerLink]="['/chatbot']">Pre-Diagnosis Chat Bot</button>
+                <div class="col-md-6">
+                    <button [routerLink]="['/chatbot']" type="button" class="btn btn-danger">Pre-Diagnosis Chat Bot</button>
                 </div>
+            </div>
     </div>
 </div>
 
@@ -267,15 +268,18 @@
                               <div class="card-body">
                                 <div class="table-responsive">
                                     <div class="col-12">
-                                        <table>
-                                                <tr>
+                                        <table class="table table-striped">
+                                                <thead class="white-text" style="background-color:rgb(220, 58, 58);color:white">
                                                         <th>Doctor Name</th>
                                                         <th>Time of Request</th>
-                                                </tr>
-                                                <tr *ngFor="let meta of allbooked">
-                                                    <td *ngIf="meta.flag">{{meta.doctor.name}}</td>
-                                                    <td *ngIf="meta.flag">{{meta.date | date:'medium'}}</td>
-                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                        <tr *ngFor="let meta of allbooked">
+                                                                <td *ngIf="meta.flag">{{meta.doctor.name}}</td>
+                                                                <td *ngIf="meta.flag">{{meta.date | date:'medium'}}</td>
+                                                            </tr>
+                                                </tbody>
+                                                
                                         </table>
                                             
                                     </div>
@@ -292,18 +296,22 @@
                                 <div class="card-body">
                                     <div class="table-responsive">
                                         <div class="col-12">
-                                            <table>
-                                                    <tr>
+                                            <table class="table table-striped">
+
+                                                    <thead class="white-text" style="background-color:rgb(220, 58, 58);color:white">
                                                             <th>Doctor Name</th>
                                                             <th>Token Number</th>
                                                             <th>Time</th>
-                                                    </tr>
-                                                    <tr *ngFor="let meta of allbooked">
-                                                        <td *ngIf="!(meta.flag)">{{meta.doctor.name}}</td>
-                                                        <td *ngIf="!(meta.flag)">{{meta.token}}</td>
-                                                        <td *ngIf="!(meta.flag)">{{meta.date | date:'medium'}}</td>
-                                                        
-                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr *ngFor="let meta of allbooked">
+                                                                <td *ngIf="!(meta.flag)">{{meta.doctor.name}}</td>
+                                                                <td *ngIf="!(meta.flag)">{{meta.token}}</td>
+                                                                <td *ngIf="!(meta.flag)">{{meta.date | date:'medium'}}</td>
+                                                                
+                                                            </tr>
+                                                    </tbody>
+                                                    
                                             </table>
                                           
                                         </div>

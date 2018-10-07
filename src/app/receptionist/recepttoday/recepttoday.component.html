@@ -50,8 +50,8 @@
                             <!-- <form action="#" (submit)="ChangeTime($event)"> -->
                             <form action="#">
                               <div class="form-group">
-                                  <label for="time" class="sr-only">First Name</label>
-                                  <input [(ngModel)]="some_val" type="email" class="form-control" id="time" placeholder="{{meta.approx_date | date :'shortTime'}}">
+                                  <!-- <label for="time" class="sr-only">First Name</label> -->
+                                  <input [(ngModel)]="some_val" type="email" class="form-control" id="time" placeholder="{{meta.approx_date | date :'shortTime'}}" name="{{meta._id}}">
                               </div>
                               <span>
                                 <br> 

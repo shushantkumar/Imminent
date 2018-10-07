@@ -100,11 +100,11 @@ export class RecepttodayComponent implements OnInit {
       let hour=parseInt(val[11])*10+parseInt(val[12]);
       let minute=parseInt(val[14])*10+parseInt(val[15]);
       let hour1=hour-5+parseInt(this.some_val[0])*10+parseInt(this.some_val[1]);
-      let minute1=minute-30+parseInt(this.some_val[3])*10+parseInt(this.some_val[4]);
+      let minute1=minute-3+parseInt(this.some_val[3])*10+parseInt(this.some_val[4]);
       console.log(hour1);
       //converting to string
       let final=hour1.toString()+":"+minute1.toString();
-      console.log(hour1+minute1);
+      console.log(hour1,minute1);
       return final;
 
   }
