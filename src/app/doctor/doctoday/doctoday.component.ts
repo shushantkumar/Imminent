@@ -28,7 +28,7 @@ export class DoctodayComponent implements OnInit {
   }
   openReportForm(meta){
     //here I should invoke service to set the value
-    this.getBService.setStudentInfo(meta.student._id,meta.student.name,meta.token);
+    this.getBService.setStudentInfo([meta.student._id,meta.student.name,meta.token]);
     this.dialog.open(ReportComponent,{width: '95%',height: '95%'});
 
   }
