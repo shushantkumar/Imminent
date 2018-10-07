@@ -51,4 +51,30 @@ export class RecepttodayComponent implements OnInit {
 
 }
 
+  Approve(event){
+    console.log("Appontment booking initiated");
+    let appID = event._id;
+    let data = [
+      {
+      "propName":"flag",
+      "value":"0"
+      }
+      
+    ];
+    console.log(appID,data);
+    this.getService.PatchAppointment(data,appID).subscribe(
+      (res) =>{
+        let response = res;
+        // this.alldata = response;
+        console.log(response);
+        
+      }, 
+    (err) => console.log(err),
+    () => console.log('done!')
+);
+// this.router.navigate(['reception/current']);
+this.getAllHistory();
+
+  }
+
 }

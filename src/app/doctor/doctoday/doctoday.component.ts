@@ -28,7 +28,7 @@ export class DoctodayComponent implements OnInit {
   }
   openReportForm(meta){
     //here I should invoke service to set the value
-    this.getBService.setStudentInfo(meta.student._id);
+    this.getBService.setStudentInfo(meta.student._id,meta.student.name,meta.token);
     this.dialog.open(ReportComponent,{width: '95%',height: '95%'});
 
   }
@@ -41,7 +41,9 @@ export class DoctodayComponent implements OnInit {
 
   getAllHistory(){
     var data = this.cookieService.get('DOCuserID');
+    
     console.log("Something is going on!");
+    console.log("doc"+data);
     this.getService.DoctorAppointment(data).subscribe(
       (res) =>{
           let response = res.pending;
