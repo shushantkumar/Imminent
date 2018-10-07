@@ -4,6 +4,8 @@ import { ReportComponent } from '../../report/report.component';
 import { CookieService } from 'ngx-cookie-service';
 import {Router} from '@angular/router';
 import { CurrententryService } from '../../appointmententry/currententry.service';
+//importing intercomponent comm service
+import { BroadcastService } from '../../broadcast/broadcast.service';
 
 @Component({
   selector: 'app-doctoday',
@@ -12,18 +14,21 @@ import { CurrententryService } from '../../appointmententry/currententry.service
 })
 export class DoctodayComponent implements OnInit {
   alldata;
-
+   
   constructor(
     public dialog: MatDialog,
     private cookieService: CookieService,
     private router: Router,
-    private getService:CurrententryService
+    private getService:CurrententryService,
+    private getBService:BroadcastService
     ) { }
 
   ngOnInit() {
     this.getAllHistory();
   }
-  openReportForm(){
+  openReportForm(meta){
+    //here I should invoke service to set the value
+    this.getBService.setStudentInfo(meta.student._id);
     this.dialog.open(ReportComponent,{width: '95%',height: '95%'});
 
   }

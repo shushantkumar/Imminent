@@ -53,6 +53,7 @@ import { RecptionistService } from './receptionist/recptionist.service';
 import { FetchDoctorsService } from './booking/fetch-doctors.service';
 import { CurrententryService } from './appointmententry/currententry.service';
 import { PastentryService } from './appointmententry/pastentry.service';
+import { BroadcastService } from './broadcast/broadcast.service';
 
 //added import
 import {
@@ -117,7 +118,8 @@ import {
     RecptionistService,
     FetchDoctorsService,
     CurrententryService,    
-    PastentryService
+    PastentryService,
+    BroadcastService
   ],
   bootstrap: [AppComponent]
 })
