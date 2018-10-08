@@ -94,20 +94,6 @@ export class RecepttodayComponent implements OnInit {
 
   }
 
-  //function to trucate the date the date part of date time
-  truncDate(val:string):string
-  {
-      // let hour=parseInt(val[11])*10+parseInt(val[12]);
-      // let minute=parseInt(val[14])*10+parseInt(val[15]);
-      let hour1=(parseInt(this.some_val[0])*10+parseInt(this.some_val[1]))-5;
-      let minute1=(parseInt(this.some_val[3])*10+parseInt(this.some_val[4]))-3;
-      console.log(hour1);
-      //converting to string
-      let final=hour1.toString()+":"+minute1.toString();
-      console.log(hour1,minute1);
-      return final;
-
-  }
   
 
   //to change time
@@ -118,8 +104,27 @@ export class RecepttodayComponent implements OnInit {
     let appID = meta._id;
     console.log(meta.approx_date);
 
-    let time = this.truncDate(meta.approx_date.toString());
+    
+    let hour1=(parseInt(this.some_val[0])*10+parseInt(this.some_val[1]))-5;
+    let minute1=(parseInt(this.some_val[3])*10+parseInt(this.some_val[4]))-30;
+    if (minute1<0)
+    {
+      hour1=hour1-1;
+      minute1=60+minute1;
+    }
+    console.log(hour1);
+      //converting to string
+    
+    console.log(hour1,minute1);
 
+    let temp1=hour1+"";
+    let temp2=minute1+"";
+    if (temp1.length==1)
+      temp1="0"+temp1;
+    if (temp2.length==1)
+      temp2="0"+temp2;
+
+    let time=temp1+":"+temp2;
     // put the updated date from the form
     console.log("asdf"+meta.approx_date.substring(0,10)+"T"+time+":00.085Z");
     
