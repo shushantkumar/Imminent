@@ -97,10 +97,10 @@ export class RecepttodayComponent implements OnInit {
   //function to trucate the date the date part of date time
   truncDate(val:string):string
   {
-      let hour=parseInt(val[11])*10+parseInt(val[12]);
-      let minute=parseInt(val[14])*10+parseInt(val[15]);
-      let hour1=hour-5+parseInt(this.some_val[0])*10+parseInt(this.some_val[1]);
-      let minute1=minute-3+parseInt(this.some_val[3])*10+parseInt(this.some_val[4]);
+      // let hour=parseInt(val[11])*10+parseInt(val[12]);
+      // let minute=parseInt(val[14])*10+parseInt(val[15]);
+      let hour1=(parseInt(this.some_val[0])*10+parseInt(this.some_val[1]))-5;
+      let minute1=(parseInt(this.some_val[3])*10+parseInt(this.some_val[4]))-3;
       console.log(hour1);
       //converting to string
       let final=hour1.toString()+":"+minute1.toString();
