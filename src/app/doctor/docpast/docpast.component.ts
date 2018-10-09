@@ -10,6 +10,7 @@ import { PastentryService } from '../../appointmententry/pastentry.service';
 })
 export class DocpastComponent implements OnInit {
   alldata;
+  fieldArray;
   constructor(
     private cookieService: CookieService,
     private router: Router,
@@ -34,6 +35,7 @@ export class DocpastComponent implements OnInit {
       (res) =>{
           let response = res.visit;
           this.alldata = response;
+          this.fieldArray = response;
           console.log(response);
         }, 
       (err) => console.log(err),
