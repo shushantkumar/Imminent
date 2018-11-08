@@ -14,16 +14,31 @@ export class ParallaxComponent implements OnInit {
     "url('../../assets/images/sport.png') no-repeat 50% 100%",
     "url('../../assets/images/party.jpg') no-repeat 50% 100%"
   ];
+
+    this.e=[
+      "NITK Health Care Center Automation",
+      "NITK Sports Complex Automation",
+      "NITK SAC & SJA Event Management"
+  ];
     
+  this.c=[
+    "#4A148C",
+    "#03A9F4",
+    "#ffff66"
+  ];
   }
   d;
   i;
+  e;
+  c;
   some;
   changeBackGround(){
     
     setTimeout(()=>{
       console.log(this.i);
       document.getElementById('backgro').style.background=this.d[this.i];
+      document.getElementById('baset').innerHTML =this.e[this.i];
+      document.getElementById('baset').style.color =this.c[this.i];
       this.i = (this.i+1)%3;
     this.changeBackGround();
     },3000) 
