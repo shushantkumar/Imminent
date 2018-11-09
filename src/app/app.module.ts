@@ -53,6 +53,7 @@ import { RecptionistService } from './receptionist/recptionist.service';
 import { FetchDoctorsService } from './booking/fetch-doctors.service';
 import { CurrententryService } from './appointmententry/currententry.service';
 import { PastentryService } from './appointmententry/pastentry.service';
+import { AlltimelineService } from './appointmententry/alltimeline.service' ;
 import { BroadcastService } from './broadcast/broadcast.service';
 import { GamesService } from './games/games.service';
 
@@ -138,7 +139,8 @@ import { SportseventComponent } from './sportsevent/sportsevent.component';
     CurrententryService,    
     PastentryService,
     BroadcastService,
-    GamesService
+    GamesService,
+    AlltimelineService
   ],
   bootstrap: [AppComponent]
 })
