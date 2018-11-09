@@ -44,6 +44,8 @@ export class GamesService {
 
     var date = currentDate.getDate();
     var month = currentDate.getMonth(); 
+    // var date = 1;
+    // var month = 3;
     let specificUrl = this.serverURL + date+'/'+month+'/n/'+data +'/';
     let headers =  {headers: new  HttpHeaders({ 'Content-Type': 'application/json'})};
 
@@ -54,12 +56,14 @@ export class GamesService {
 
   }
 
-  GetSpecificEvent(data){
+  GetSpecificEvent(data,typi){
     var currentDate = new Date();
 
     var date = currentDate.getDate();
     var month = currentDate.getMonth(); 
-    let specificUrl = this.serverURL + date+'/'+month+'/'+data +'/';
+    // var date = 1;
+    // var month = 3;
+    let specificUrl = this.serverURL + date+'/'+month+'/n/'+typi+'/'+data +'/';
     let headers =  {headers: new  HttpHeaders({ 'Content-Type': 'application/json'})};
 
     // console.log(data);
