@@ -2,8 +2,8 @@
 
     <div class="container-fluid">
       <h3 class="project-name">EVENTS TIMELINE</h3>
-      <div id="timeline">
-        <div class="timeline-item">
+      <div id="timeline"  *ngFor="let i of allbooked">
+        <div *ngIf="i%2==0" class="timeline-item">
           <div class="timeline-icon">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
      width="21px" height="20px" viewBox="0 0 21 20" enable-background="new 0 0 21 20" xml:space="preserve">
@@ -16,16 +16,29 @@
   
           </div>
           <div class="timeline-content">
-            <h2>LOREM IPSUM DOLOR</h2>
+            <a href="" class="btn">{{i.date}}</a>
+            <h2>{{i.eventname}}</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-              Atque, facilis quo maiores magnam modi ab libero praesentium blanditiis.
+              {{i.emailID}}
             </p>
-            <a href="#" class="btn">button</a>
+            <p>
+                {{i.mobileNo}}
+            </p>
+            <p>
+                {{i.eventtype}}
+            </p>
+            <p>
+                {{i.firstname}} {{i.lastname}}
+            </p>
+  
+            <p>
+              {{i.description}}
+            </p>
+            
           </div>
         </div>
   
-        <div class="timeline-item">
+        <div *ngIf="i%2==1" class="timeline-item">
           <div class="timeline-icon">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
      width="21px" height="20px" viewBox="0 0 21 20" enable-background="new 0 0 21 20" xml:space="preserve">
@@ -41,15 +54,28 @@
   
           </div>
           <div class="timeline-content right">
-            <h2>LOREM IPSUM DOLOR</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, facilis quo. Maiores magnam modi ab libero praesentium blanditiis consequatur aspernatur accusantium maxime molestiae sunt ipsa.
-            </p>
-            <a href="#" class="btn">button</a>
+              <a href="" class="btn">{{i.date}}</a>
+              <h2>{{i.eventname}}</h2>
+              <p>
+                {{i.emailID}}
+              </p>
+              <p>
+                  {{i.mobileNo}}
+              </p>
+              <p>
+                  {{i.eventtype}}
+              </p>
+              <p>
+                  {{i.firstname}} {{i.lastname}}
+              </p>
+    
+              <p>
+                {{i.description}}
+              </p>
           </div>
         </div>
   
-        <div class="timeline-item">
+        <!-- <div class="timeline-item">
           <div class="timeline-icon">
   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
      width="21px" height="20px" viewBox="0 0 21 20" enable-background="new 0 0 21 20" xml:space="preserve">
@@ -68,7 +94,7 @@
             </p>
             <a href="#" class="btn">button</a>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
