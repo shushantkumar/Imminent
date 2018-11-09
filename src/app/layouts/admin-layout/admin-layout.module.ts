@@ -14,7 +14,12 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { BookingComponent } from '../../booking/booking.component';
 import { ChatbotComponent } from '../../chatbot/chatbot.component';
-
+import { SportsComplexComponent } from '../../sports-complex/sports-complex.component';
+import { GamesComponent } from '../../games/games.component';
+import { TableTenisComponent } from '../../games/table-tenis/table-tenis.component';
+import { BadmintonComponent } from '../../games/badminton/badminton.component';
+import { VolleyComponent } from '../../games/volley/volley.component';
+import { TennisComponent } from '../../games/tennis/tennis.component';
 
 import {
   MatButtonModule,
@@ -30,8 +35,7 @@ import {
     MatButtonModule,
     MatRippleModule,
     MatInputModule,
-    MatTooltipModule,
-
+    MatTooltipModule
   ],
   declarations: [
     DashboardComponent,
@@ -43,7 +47,13 @@ import {
     NotificationsComponent,
     UpgradeComponent,
     BookingComponent,
-    ChatbotComponent
+    ChatbotComponent,
+    SportsComplexComponent,
+    GamesComponent,
+    TableTenisComponent,
+    BadmintonComponent,
+    VolleyComponent,
+    TennisComponent
   ]
 })
 

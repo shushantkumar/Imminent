@@ -11,7 +11,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
     { path: '/user-profile', title: 'User Profile',  icon:'person', class: '' },
     { path: '/table-list', title: 'Health Care Center',  icon:'content_paste', class: 'hcc' },
-    { path: '/typography', title: 'Sports Complex',  icon:'library_books', class: '' },
+    { path: '/sports-complex', title: 'Sports Complex',  icon:'library_books', class: '' },
     { path: '/icons', title: 'SJA Events',  icon:'bubble_chart', class: '' },
     { path: '/maps', title: 'SAC Events',  icon:'location_on', class: '' },
     { path: '/notifications', title: 'Notifications',  icon:'notifications', class: '' },

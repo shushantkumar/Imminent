@@ -63,6 +63,9 @@ import {
   MatTooltipModule,
 } from '@angular/material';
 
+//import { GamesComponent } from './games/games.component';
+//import { SportsComplexComponent } from './sports-complex/sports-complex.component';
+
 
 @NgModule({
   imports: [
@@ -97,6 +100,12 @@ import {
     ReceptionistComponent,
     RecepttodayComponent,
     ReceptpastComponent,
+    // TableTenisComponent,
+    // BadmintonComponent,
+    // VolleyComponent,
+    // TennisComponent,
+    //GamesComponent,
+    
    
     // ReceptionistComponent,
     // AppointmentsComponent,

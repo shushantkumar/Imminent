@@ -10,6 +10,13 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { BookingComponent } from '../../booking/booking.component';
 import { ChatbotComponent } from '../../chatbot/chatbot.component';
+import { SportsComplexComponent } from '../../sports-complex/sports-complex.component';
+
+import { GamesComponent } from '../../games/games.component';
+import { TableTenisComponent } from '../../games/table-tenis/table-tenis.component';
+import { BadmintonComponent } from '../../games/badminton/badminton.component';
+import { VolleyComponent } from '../../games/volley/volley.component';
+import { TennisComponent } from '../../games/tennis/tennis.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -57,11 +64,19 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'user-profile',   component: UserProfileComponent },
     { path: 'table-list',     component: TableListComponent },
-    { path: 'typography',     component: TypographyComponent },
+    { path: 'sports-complex', component: SportsComplexComponent },
     { path: 'icons',          component: IconsComponent },
     { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
     { path: 'booking',        component: BookingComponent},
-    { path: 'chatbot',        component: ChatbotComponent}
+    { path: 'chatbot',        component: ChatbotComponent},
+
+    { path: 'Games',        component: GamesComponent},
+    { path: 'TableTennis',        component: TableTenisComponent},
+    { path: 'LongTennis',        component: TennisComponent},
+    { path: 'VolleyBall',        component: VolleyComponent},
+    { path: 'Badminton',        component: BadmintonComponent},
+
+
 ];

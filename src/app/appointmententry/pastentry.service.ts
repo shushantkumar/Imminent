@@ -35,7 +35,7 @@ export class PastentryService {
 
     console.log(data);
 
-    return this.http.post(specificUrl,data, headers)
+    return this.http.post(specificUrl,data,headers)
     .map(this.extractData)
     .catch(this.handleError);
   }
