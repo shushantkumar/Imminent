@@ -17,6 +17,10 @@ import { TableTenisComponent } from '../../games/table-tenis/table-tenis.compone
 import { BadmintonComponent } from '../../games/badminton/badminton.component';
 import { VolleyComponent } from '../../games/volley/volley.component';
 import { TennisComponent } from '../../games/tennis/tennis.component';
+import { SportseventComponent } from '../../sportsevent/sportsevent.component';
+import { SportstimelineComponent } from '../../sportsevent/sportstimeline/sportstimeline.component';
+import { IconstimelineComponent } from '../../icons/iconstimeline/iconstimeline.component';
+import { MapstimelineComponent } from '../../maps/mapstimeline/mapstimeline.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -67,12 +71,17 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'sports-complex', component: SportsComplexComponent },
     { path: 'icons',          component: IconsComponent },
     { path: 'maps',           component: MapsComponent },
+    { path: 'icons/timeline',          component: IconstimelineComponent },
+    { path: 'maps/timeline',           component: MapstimelineComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
     { path: 'booking',        component: BookingComponent},
     { path: 'chatbot',        component: ChatbotComponent},
 
+
     { path: 'games',        component: GamesComponent},
+    { path: 'gamesevent',        component: SportseventComponent},
+    { path: 'gamesevent/timeline',        component: SportstimelineComponent},
     { path: 'games/tabletennis',        component: TableTenisComponent},
     { path: 'games/lawntennis',        component: TennisComponent},
     { path: 'games/volleyball',        component: VolleyComponent},

@@ -63,6 +63,10 @@ import {
   MatRippleModule,
   MatTooltipModule,
 } from '@angular/material';
+import { SportseventComponent } from './sportsevent/sportsevent.component';
+// import { IconstimelineComponent } from './iconstimeline/iconstimeline.component';
+// import { MapstimelineComponent } from './mapstimeline/mapstimeline.component';
+// import { SportstimelineComponent } from './sportstimeline/sportstimeline.component';
 
 //import { GamesComponent } from './games/games.component';
 //import { SportsComplexComponent } from './sports-complex/sports-complex.component';
@@ -101,6 +105,10 @@ import {
     ReceptionistComponent,
     RecepttodayComponent,
     ReceptpastComponent,
+    // IconstimelineComponent,
+    // MapstimelineComponent,
+    // SportstimelineComponent,
+    // SportseventComponent,
     // TableTenisComponent,
     // BadmintonComponent,
     // VolleyComponent,

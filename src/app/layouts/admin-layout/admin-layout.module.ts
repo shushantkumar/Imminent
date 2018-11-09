@@ -20,6 +20,10 @@ import { TableTenisComponent } from '../../games/table-tenis/table-tenis.compone
 import { BadmintonComponent } from '../../games/badminton/badminton.component';
 import { VolleyComponent } from '../../games/volley/volley.component';
 import { TennisComponent } from '../../games/tennis/tennis.component';
+import { SportseventComponent } from '../../sportsevent/sportsevent.component';
+import { SportstimelineComponent } from '../../sportsevent/sportstimeline/sportstimeline.component';
+import { IconstimelineComponent } from '../../icons/iconstimeline/iconstimeline.component';
+import { MapstimelineComponent } from '../../maps/mapstimeline/mapstimeline.component';
 
 import {
   MatButtonModule,
@@ -53,7 +57,11 @@ import {
     TableTenisComponent,
     BadmintonComponent,
     VolleyComponent,
-    TennisComponent
+    TennisComponent,
+    SportseventComponent,
+    SportstimelineComponent,
+    MapstimelineComponent,
+    IconstimelineComponent
   ]
 })
 

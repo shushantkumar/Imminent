@@ -1,1 +1,82 @@
-<div id="map"></div>
+<div class="main-content">
+        <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button [routerLink]="['/maps/timeline']" type="button" class="btn btn-danger" style="width:100%">See the event timeline</button>
+                    </div>
+                    
+                </div>
+        </div>
+        <div class="container-fluid">
+            <div class="col-md-12">
+                <div class="card">
+                      <div class="card-header card-header-danger">
+                          <h4 class="card-title "><i class="far fa-sticky-note"></i><b style="padding-left:15px">Hold an event at Students Activity Center</b></h4>
+                          <p class="card-category"> Users can create a new event in this portal </p> 
+                      </div>
+                      <div class="card-body">
+                        <div class="table-responsive">
+                            <div class="card-body">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                          <mat-form-field class="example-full-width">
+                                              <input matInput placeholder="Event Name">
+                                            </mat-form-field>
+                                        </div>
+      
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                              <input matInput placeholder="Email address" type="email">
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                          <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Organizer Fist Name" type="text">
+                                          </mat-form-field>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Organizer Last Name" type="text">
+                                          </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                          <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Event type" type="text">
+                                          </mat-form-field>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                              <input matInput placeholder="Date" type="date">
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                          <label>Event Details</label>
+                                          <mat-form-field class="example-full-width">
+                                             <textarea matInput placeholder=""></textarea>
+                                           </mat-form-field>
+                                            <!-- <div class="form-group">
+          
+                                                <div class="form-group">
+                                                    <label class="bmd-label-floating"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
+                                                    <textarea class="form-control" rows="5"></textarea>
+                                                </div>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                    <button mat-raised-button type="submit" class="btn btn-danger pull-right">Create Event</button>
+                                    <div class="clearfix"></div>
+                                </form>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+      </div>

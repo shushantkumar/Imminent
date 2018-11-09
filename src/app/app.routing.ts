@@ -21,6 +21,7 @@ import { ReceptionistComponent } from './receptionist/receptionist.component';
 import { RecepttodayComponent } from './receptionist/recepttoday/recepttoday.component';
 import { ReceptpastComponent } from './receptionist/receptpast/receptpast.component';
 
+
 const routes: Routes =[
   {
     path: '',
