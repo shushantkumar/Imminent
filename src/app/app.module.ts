@@ -54,6 +54,7 @@ import { FetchDoctorsService } from './booking/fetch-doctors.service';
 import { CurrententryService } from './appointmententry/currententry.service';
 import { PastentryService } from './appointmententry/pastentry.service';
 import { BroadcastService } from './broadcast/broadcast.service';
+import { GamesService } from './games/games.service';
 
 //added import
 import {
@@ -128,7 +129,8 @@ import {
     FetchDoctorsService,
     CurrententryService,    
     PastentryService,
-    BroadcastService
+    BroadcastService,
+    GamesService
   ],
   bootstrap: [AppComponent]
 })

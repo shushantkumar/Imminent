@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GamesService } from '../games.service';
+
 
 @Component({
   selector: 'app-badminton',
@@ -11,5 +13,7 @@ export class BadmintonComponent implements OnInit {
 
   ngOnInit() {
   }
+
+
 
 }
