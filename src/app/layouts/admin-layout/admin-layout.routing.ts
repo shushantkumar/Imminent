@@ -72,11 +72,11 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'booking',        component: BookingComponent},
     { path: 'chatbot',        component: ChatbotComponent},
 
-    { path: 'Games',        component: GamesComponent},
-    { path: 'TableTennis',        component: TableTenisComponent},
-    { path: 'LongTennis',        component: TennisComponent},
-    { path: 'VolleyBall',        component: VolleyComponent},
-    { path: 'Badminton',        component: BadmintonComponent},
+    { path: 'games',        component: GamesComponent},
+    { path: 'games/tabletennis',        component: TableTenisComponent},
+    { path: 'games/lawntennis',        component: TennisComponent},
+    { path: 'games/volleyball',        component: VolleyComponent},
+    { path: 'games/badminton',        component: BadmintonComponent},
 
 
 ];
