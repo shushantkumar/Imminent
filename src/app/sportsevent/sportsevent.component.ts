@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { AlltimelineService } from '../appointmententry/alltimeline.service';
+import { CookieService } from 'ngx-cookie-service';
+import * as $ from 'jquery';
+import { parseCookieValue } from '@angular/common/src/cookie';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-sportsevent',
@@ -8,15 +13,15 @@ import { Component, OnInit } from '@angular/core';
 export class SportseventComponent implements OnInit {
 
   constructor(
-    
+    private timeservice : AlltimelineService,
+    private cookieService: CookieService,
+    private router: Router
   ) { }
 
   ngOnInit() {
   }
   CreateEvent(event){
     event.preventDefault();
-    let username = event.target.elements[0].value;
-    let password = event.target.elements[1].value;
 
     let data = {
       
@@ -29,5 +34,22 @@ export class SportseventComponent implements OnInit {
     "date": event.target.elements[6].value,
     "description": event.target.elements[7].value
     }
+    var urk ;
+    this.timeservice.CreateEvent(data,urk)
+    .subscribe(
+      (response) => {
+      console.log(response);
+
+
+      this.router.navigate(['/gamesevent/timeline']);
+      
+    },
+    (err) =>{
+          console.log("error maadi");
+    },
+    () => {console.log('done!');
+
+  }
+  );
   }
 }
