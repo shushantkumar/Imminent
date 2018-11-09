@@ -24,6 +24,7 @@ import { SportseventComponent } from '../../sportsevent/sportsevent.component';
 import { SportstimelineComponent } from '../../sportsevent/sportstimeline/sportstimeline.component';
 import { IconstimelineComponent } from '../../icons/iconstimeline/iconstimeline.component';
 import { MapstimelineComponent } from '../../maps/mapstimeline/mapstimeline.component';
+import { MatTabsModule } from '@angular/material';
 
 import {
   MatButtonModule,
@@ -39,7 +40,8 @@ import {
     MatButtonModule,
     MatRippleModule,
     MatInputModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatTabsModule
   ],
   declarations: [
     DashboardComponent,
