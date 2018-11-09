@@ -11,7 +11,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./sportstimeline.component.scss']
 })
 export class SportstimelineComponent implements OnInit {
-
+  timelinedata;
   constructor(
     private timeservice : AlltimelineService,
     private cookieService: CookieService,
@@ -19,7 +19,7 @@ export class SportstimelineComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    
+
     this.FetchTimeline("");
   }
   FetchTimeline(urk){
@@ -27,6 +27,8 @@ export class SportstimelineComponent implements OnInit {
       .subscribe(
         (response) => {
         console.log(response);
+        this.timelinedata = response;
+        
         // this.cookieService.set( 'ENVuserID', response.userID );
         // this.cookieService.set('ENVtoken',response.token);
         
