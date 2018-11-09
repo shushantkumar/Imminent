@@ -34,7 +34,8 @@ export class SportseventComponent implements OnInit {
     "date": event.target.elements[6].value,
     "description": event.target.elements[7].value
     }
-    var urk ;
+    var urk = "sp" ;
+    console.log(data);
     this.timeservice.CreateEvent(data,urk)
     .subscribe(
       (response) => {

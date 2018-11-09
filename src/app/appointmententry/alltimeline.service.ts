@@ -8,7 +8,7 @@ import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class AlltimelineService {
-  private serverURL ='http://winter-is-comming.herokuapp.com/';
+  private serverURL ='http://winter-is-comming.herokuapp.com/event/';
 
   constructor(private http:HttpClient) { }
 
@@ -29,7 +29,7 @@ export class AlltimelineService {
   }
 
   CreateEvent(data,urk){
-    let specificUrl = this.serverURL ;
+    let specificUrl = this.serverURL + urk +'/' ;
     let headers =  {headers: new  HttpHeaders({ 'Content-Type': 'application/json'})};
 
     console.log(data);
@@ -40,7 +40,7 @@ export class AlltimelineService {
   }
 
   FetchTimeline(urk){
-    let specificUrl = this.serverURL ;
+    let specificUrl = this.serverURL + urk +'/'  ;
     return this.http.get(specificUrl)
     .map(this.extractData)
     .catch(this.handleError);

@@ -34,7 +34,7 @@ export class IconsComponent implements OnInit {
     "date": event.target.elements[6].value,
     "description": event.target.elements[7].value
     }
-    var urk ;
+    var urk = "sja" ;
     this.timeservice.CreateEvent(data,urk)
     .subscribe(
       (response) => {

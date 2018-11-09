@@ -11,7 +11,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./iconstimeline.component.scss']
 })
 export class IconstimelineComponent implements OnInit {
-
+  timelinedata;
   constructor(
     private timeservice : AlltimelineService,
     private cookieService: CookieService,
@@ -20,13 +20,15 @@ export class IconstimelineComponent implements OnInit {
 
   ngOnInit() {
     
-    this.FetchTimeline("");
+    this.FetchTimeline("sja");
   }
   FetchTimeline(urk){
     this.timeservice.FetchTimeline(urk)
       .subscribe(
         (response) => {
         console.log(response);
+        this.timelinedata = response.users;
+        console.log(this.timelinedata);
         // this.cookieService.set( 'ENVuserID', response.userID );
         // this.cookieService.set('ENVtoken',response.token);
         

@@ -20,14 +20,15 @@ export class SportstimelineComponent implements OnInit {
 
   ngOnInit() {
 
-    this.FetchTimeline("");
+    this.FetchTimeline("sp");
   }
   FetchTimeline(urk){
     this.timeservice.FetchTimeline(urk)
       .subscribe(
         (response) => {
         console.log(response);
-        this.timelinedata = response;
+        this.timelinedata = response.users;
+        console.log(this.timelinedata);
         
         // this.cookieService.set( 'ENVuserID', response.userID );
         // this.cookieService.set('ENVtoken',response.token);
