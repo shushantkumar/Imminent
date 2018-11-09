@@ -43,7 +43,7 @@ export class BadmintonComponent implements OnInit {
         console.log(n);
         var i;
         for(i=0;i<n;i++){
-          this.alldata[som[i].timeslot] = som[i].courtBooked;
+          this.alldata[som[i].timeslot-1] = som[i].courtBooked;
         }
         // this.alldata[6]=6;
         for(i=0;i<8;i++){
