@@ -56,6 +56,7 @@ import { PastentryService } from './appointmententry/pastentry.service';
 import { AlltimelineService } from './appointmententry/alltimeline.service' ;
 import { BroadcastService } from './broadcast/broadcast.service';
 import { GamesService } from './games/games.service';
+import { MatTabsModule } from '@angular/material';
 
 //added import
 import {
@@ -87,6 +88,7 @@ import { SportseventComponent } from './sportsevent/sportsevent.component';
     MatRippleModule,
     MatInputModule,
     MatTooltipModule,
+    MatTabsModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     }),
@@ -106,6 +108,7 @@ import { SportseventComponent } from './sportsevent/sportsevent.component';
     ReceptionistComponent,
     RecepttodayComponent,
     ReceptpastComponent,
+   
     // IconstimelineComponent,
     // MapstimelineComponent,
     // SportstimelineComponent,

@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 import * as Chartist from 'chartist';
+import { HistoryService } from '../table-list/history.service';
+// import { HttpModule } from '@angular/http';
+import { CookieService } from 'ngx-cookie-service';
+import { CurrententryService } from '../appointmententry/currententry.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,8 +12,39 @@ import * as Chartist from 'chartist';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  allHistory;
+  allbooked;
+  constructor(private cookieService: CookieService,private allrequestsService:HistoryService,private currservice: CurrententryService) { }
 
-  constructor() { }
+  getAllHistory(){
+    console.log("Something is going on!");
+    this.allrequestsService.getAllHistory().subscribe(
+      (res) =>{
+          // console.log(res.orders);
+          let response = res.visit;
+          console.log(response);
+          this.allHistory=response;
+        }, 
+      (err) => console.log(err),
+      () => console.log('done!')
+  );
+
+  }
+
+  getBooked(){
+    let data = this.cookieService.get( 'ENVuserID');
+    this.currservice.StudentAppointment(data).subscribe(
+      (res) =>{
+          console.log(res);
+          let response = res.pending;
+          console.log(response);
+          this.allbooked=response;
+        }, 
+      (err) => console.log(err),
+      () => console.log('done!')
+  );
+
+  }
   startAnimationForLineChart(chart){
       let seq: any, delays: any, durations: any;
       seq = 0;
@@ -66,6 +102,8 @@ export class DashboardComponent implements OnInit {
       seq2 = 0;
   };
   ngOnInit() {
+    this.getAllHistory();
+    this.getBooked();
       /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */
 
       const dataDailySalesChart: any = {
