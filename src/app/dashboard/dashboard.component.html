@@ -12,71 +12,57 @@
                             <div class="row">
                                 <div class="col-md-5">
                                   <mat-form-field class="example-full-width">
-                                      <input matInput placeholder="NITK (disabled)" disabled>
+                                      <input matInput placeholder="NITK" disabled>
                                     </mat-form-field>
                                 </div>
                                 <div class="col-md-3">
                                     <mat-form-field class="example-full-width">
-                                      <input matInput placeholder="Username">
+                                      <input matInput placeholder="Username" value="{{userdetails.emailID}}" disabled>
                                     </mat-form-field>
                                 </div>
                                 <div class="col-md-4">
                                     <mat-form-field class="example-full-width">
-                                      <input matInput placeholder="Email address" type="email">
+                                      <input matInput placeholder="Email address" type="email" value="{{userdetails.emailID}}" disabled>
                                     </mat-form-field>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                   <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Fist Name" type="text">
+                                    <input matInput placeholder="First Name" type="text"  value="{{userdetails.name}}" disabled>
                                   </mat-form-field>
                                 </div>
                                 <div class="col-md-6">
                                   <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Last Name" type="text">
+                                    <input matInput placeholder="Last Name" type="text"  value="{{userdetails.name}}" disabled>
                                   </mat-form-field>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
                                   <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Adress" type="text">
+                                    <input matInput placeholder="Address" type="text"  value="{{userdetails.address}}" disabled>
                                   </mat-form-field>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
                                   <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="City" type="text">
+                                    <input matInput placeholder="Mangalore" type="text" disabled>
                                   </mat-form-field>
                                 </div>
                                 <div class="col-md-4">
                                   <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Country" type="text">
+                                    <input matInput placeholder="India" type="text" disabled>
                                   </mat-form-field>
                                 </div>
                                 <div class="col-md-4">
                                   <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Postal Code" type="text">
+                                    <input matInput placeholder="Mobile No" type="text"   value="{{userdetails.mobileNo}}" disabled>
                                   </mat-form-field>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                  <label>About Me</label>
-                                  <mat-form-field class="example-full-width">
-                                     <textarea matInput placeholder=""></textarea>
-                                   </mat-form-field>
-                                    <!-- <div class="form-group">
-  
-                                        <div class="form-group">
-                                            <label class="bmd-label-floating"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
-                                            <textarea class="form-control" rows="5"></textarea>
-                                        </div>
-                                    </div> -->
-                                </div>
-                            </div>
+
                             <!-- <button mat-raised-button type="submit" class="btn btn-danger pull-right">Update Profile</button> -->
                             <div class="clearfix"></div>
                         </form>
@@ -105,9 +91,9 @@
 
         <div class="row">
             <div class="col-md-12">
-                <mat-tab-group>
-                        <mat-tab label="View Health Statistics">
-                            <h1>General Health Statistics</h1>
+                <mat-tab-group style="background-color:#ffffe6;padding:10px">
+                        <mat-tab label="View Health Statistics" style="background-color:blue">
+                            <h3>General Health Statistics</h3>
                             <div class="row">
                                     
                                     <div class="col-lg-3 col-md-6 col-sm-6">
@@ -219,7 +205,7 @@
                                     <div class="col-md-6">
                                             <div class="card">
                                                     <div class="card-header card-header-danger">
-                                                        <h4 class="card-title "><i class="fas fa-notes-medical"></i><b style="padding-left:10px">Appointments for Today</b></h4>
+                                                        <h4 class="card-title "><i class="fas fa-notes-medical"></i><b style="padding-left:10px">Appointments</b></h4>
                                                         <p class="card-category"> View scheduled Appointments </p> 
                                                     </div>
                                                     <div class="card-body">
@@ -254,8 +240,135 @@
                             </div>
                         </mat-tab>
                         <mat-tab label="View Currently booked courts">
-                            <h1>View Currently booked courts</h1>
-                            <p>adsfadsf</p>
+                            <h3>View Currently booked courts</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="card">
+                                          <div class="card-header card-header-danger">
+                                              <h4 class="card-title "><i class="fas fa-bowling-ball"></i><b style="padding-left:10px">Table Tennis</b></h4>
+                                              <p class="card-category"> View current bookings </p> 
+                                          </div>
+                                          <div class="card-body">
+                                            <div class="table-responsive">
+                                                <div class="col-12">
+                                                    <table class="table table-striped">
+                                                            <thead class="white-text" style="background-color:rgb(220, 58, 58);color:white">
+                                                                    <th>Slot Number</th>
+                                                                    <th>Status</th>
+                                                                    <th>Date</th>
+                                                            </thead>
+                                                            <tbody>
+                                                                    <tr *ngFor="let meta of TableTennis">
+                                                                        <td>{{meta.timeslot}}</td>
+                                                                        <td>{{meta.courtBooked}}/3</td>
+                                                                        <td>{{meta.created}}</td>
+                                                                    </tr>
+                                                            </tbody>
+                                                            
+                                                    </table>
+                                                        
+                                                </div>
+                                            </div>
+                                          </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card">
+                                          <div class="card-header card-header-danger">
+                                              <h4 class="card-title "><i class="fas fa-bowling-ball"></i><b style="padding-left:10px">Badminton</b></h4>
+                                              <p class="card-category"> View current bookings </p> 
+                                          </div>
+                                          <div class="card-body">
+                                            <div class="table-responsive">
+                                                <div class="col-12">
+                                                    <table class="table table-striped">
+                                                            <thead class="white-text" style="background-color:rgb(220, 58, 58);color:white">
+                                                                    <th>Slot Number</th>
+                                                                    <th>Status</th>
+                                                                    <th>Date</th>
+                                                            </thead>
+                                                            <tbody>
+                                                                    <tr *ngFor="let meta of Badminton">
+                                                                        <td>{{meta.timeslot}}</td>
+                                                                        <td>{{meta.courtBooked}}/6</td>
+                                                                        <td>{{meta.created}}</td>
+                                                                    </tr>
+                                                            </tbody>
+                                                            
+                                                    </table>
+                                                        
+                                                </div>
+                                            </div>
+                                          </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="card">
+                                          <div class="card-header card-header-danger">
+                                              <h4 class="card-title "><i class="fas fa-bowling-ball"></i><b style="padding-left:10px">Lawn Tennis</b></h4>
+                                              <p class="card-category"> View current bookings </p> 
+                                          </div>
+                                          <div class="card-body">
+                                            <div class="table-responsive">
+                                                <div class="col-12">
+                                                    <table class="table table-striped">
+                                                            <thead class="white-text" style="background-color:rgb(220, 58, 58);color:white">
+                                                                    <th>Slot Number</th>
+                                                                    <th>Status</th>
+                                                                    <th>Date</th>
+                                                            </thead>
+                                                            <tbody>
+                                                                    <tr *ngFor="let meta of LawnTennis">
+                                                                        <td>{{meta.timeslot}}</td>
+                                                                        <td>{{meta.courtBooked}}/3</td>
+                                                                        <td>{{meta.created}}</td>
+                                                                    </tr>
+                                                            </tbody>
+                                                            
+                                                    </table>
+                                                        
+                                                </div>
+                                            </div>
+                                          </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card">
+                                          <div class="card-header card-header-danger">
+                                              <h4 class="card-title "><i class="fas fa-bowling-ball"></i><b style="padding-left:10px">Volley Ball</b></h4>
+                                              <p class="card-category"> View current bookings </p> 
+                                          </div>
+                                          <div class="card-body">
+                                            <div class="table-responsive">
+                                                <div class="col-12">
+                                                    <table class="table table-striped">
+                                                            <thead class="white-text" style="background-color:rgb(220, 58, 58);color:white">
+                                                                    <th>Slot Number</th>
+                                                                    <th>Status</th>
+                                                                    <th>Date</th>
+                                                            </thead>
+                                                            <tbody>
+                                                                    <tr *ngFor="let meta of VolleyBall">
+                                                                        <td>{{meta.timeslot}}</td>
+                                                                        <td>{{meta.courtBooked}}/2</td>
+                                                                        <td>{{meta.created}}</td>
+                                                                    </tr>
+                                                            </tbody>
+                                                            
+                                                    </table>
+                                                        
+                                                </div>
+                                            </div>
+                                          </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
                         </mat-tab>
                 </mat-tab-group>
             </div>

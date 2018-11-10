@@ -5,6 +5,7 @@ import { HistoryService } from '../table-list/history.service';
 // import { HttpModule } from '@angular/http';
 import { CookieService } from 'ngx-cookie-service';
 import { CurrententryService } from '../appointmententry/currententry.service';
+import { GamesService } from '../games/games.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,7 +15,12 @@ import { CurrententryService } from '../appointmententry/currententry.service';
 export class DashboardComponent implements OnInit {
   allHistory;
   allbooked;
-  constructor(private cookieService: CookieService,private allrequestsService:HistoryService,private currservice: CurrententryService) { }
+  userdetails;
+  Badminton;
+  TableTennis;
+  LawnTennis;
+  VolleyBall;
+  constructor(private cookieService: CookieService,private allrequestsService:HistoryService,private currservice: CurrententryService,private gameservice : GamesService) { }
 
   getAllHistory(){
     console.log("Something is going on!");
@@ -45,6 +51,57 @@ export class DashboardComponent implements OnInit {
   );
 
   }
+
+  getUserDetails(){
+    this.allrequestsService.getUserDetails().subscribe(
+      (res) =>{
+          // console.log(res.orders);
+          let response = res.user;
+          console.log(response);
+          this.userdetails=response;
+        }, 
+      (err) => console.log(err),
+      () => console.log('done!')
+  );
+  }
+
+  GetSpecificEvent(data,urk){
+    this.gameservice.GetSpecificEvent(data,urk)
+      .subscribe(
+        (response) => {
+        console.log(response.court);
+        let som = response.court;
+        console.log("started");
+        console.log(som);
+        let n = som.length;
+        console.log(n);
+        var i;
+        if(urk=="Badminton"){
+          this.Badminton = som;
+        }
+        if(urk=="TableTennis"){
+          this.TableTennis = som;
+        }
+        if(urk=="LawnTennis"){
+          this.LawnTennis = som;
+        }
+        if(urk=="VolleyBall"){
+          this.VolleyBall = som;
+        }
+
+
+        // this.router.navigate(['dashboard']);
+        
+      },
+      (err) =>{
+            console.log("error maadi");
+      },
+      () => {console.log('done!');
+
+    }
+    );
+  }
+
   startAnimationForLineChart(chart){
       let seq: any, delays: any, durations: any;
       seq = 0;
@@ -104,6 +161,12 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.getAllHistory();
     this.getBooked();
+    this.getUserDetails();
+    this.GetSpecificEvent(this.cookieService.get('ENVuserID'),"Badminton");
+    this.GetSpecificEvent(this.cookieService.get('ENVuserID'),"TableTennis");
+    this.GetSpecificEvent(this.cookieService.get('ENVuserID'),"LawnTennis");
+    this.GetSpecificEvent(this.cookieService.get('ENVuserID'),"VolleyBall");
+
       /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */
 
       const dataDailySalesChart: any = {

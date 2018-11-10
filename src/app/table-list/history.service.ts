@@ -44,4 +44,12 @@ export class HistoryService {
     .catch(this.handleError);
   }
 
+  getUserDetails(){
+    let token = this.cookieService.get('ENVuserID');
+    let specificUrl = this.serverURL + '/users/'+token;
+    return this.http.get(specificUrl)
+    .map(this.extractData)
+    .catch(this.handleError);
+  }
+
 }

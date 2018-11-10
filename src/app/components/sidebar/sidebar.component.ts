@@ -14,7 +14,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/sports-complex', title: 'Sports Complex',  icon:'library_books', class: '' },
     { path: '/icons', title: 'SJA Events',  icon:'bubble_chart', class: '' },
     { path: '/maps', title: 'SAC Events',  icon:'location_on', class: '' },
-    { path: '/notifications', title: 'Notifications',  icon:'notifications', class: '' },
+    // { path: '/notifications', title: 'Notifications',  icon:'notifications', class: '' },
     // { path: '/table-list', title: 'Health Care Center',  icon:'content_paste', class: '' },
     // { path: '/upgrade', title: 'Upgrade to PRO',  icon:'unarchive', class: 'active-pro' },
 ];
